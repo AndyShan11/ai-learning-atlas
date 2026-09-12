@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="从大结构到算法选择，再到训练技巧。面向数据分析与 Kaggle 的中文交互知识地图。">
+  <meta name="theme-color" content="#234d41"><title>知图 · 数据与 AI 学习地图</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='12' fill='%23234d41'/%3E%3Ctext x='20' y='28' text-anchor='middle' fill='white' font-size='25'%3E知%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<a class="skip" href="#workspace">跳到知识地图</a>
+<header class="topbar">
+  <a class="brand" href="./"><span class="brand-mark">知</span><span>知图<span class="brand-en">LEARNING ATLAS</span></span></a>
+  <nav aria-label="视图切换" id="view-nav">
+    <button data-view="map" class="active" aria-pressed="true">知识地图</button><button data-view="choose" aria-pressed="false">选方法</button><button data-view="recipes" aria-pressed="false">组合方案</button><button data-view="updates" aria-pressed="false">更新说明</button>
+  </nav>
+  <a class="github" href="https://github.com/AndyShan11/ai-learning-atlas" target="_blank" rel="noopener">GitHub ↗</a>
+</header>
+<div class="app-shell">
+  <aside class="sidebar" aria-label="学习导航">
+    <p class="eyebrow">YOUR LEARNING COMPASS</p><h2>先看全貌，<br>再找到下一步。</h2>
+    <label class="search-label" for="search">搜索知识、算法与技巧</label>
+    <div class="search-box"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="试试：强化学习、温度…" autocomplete="off"><kbd>/</kbd></div>
+    <div id="search-results" aria-live="polite"></div>
+    <label class="eyebrow path-label" for="path">我的学习方向</label>
+    <select id="path"><option value="all">完整知识地图</option><option value="analyst">数据分析岗</option><option value="kaggle">Kaggle · 预测建模</option><option value="genai">生成式 AI</option></select>
+    <div id="path-note"></div>
+    <p class="eyebrow section-label">知识模块</p><nav id="domain-nav" aria-label="知识模块"></nav>
+    <div class="sidebar-foot"><span class="live-dot"></span> 内容核查 · 2026.09.12<br><small>经典基础 + 新方法 · 按用途取舍</small></div>
+  </aside>
+  <main id="workspace" tabindex="-1">
+    <section class="intro"><div><p class="eyebrow">A MAP FOR UNDERSTANDING</p><h1>把零散知识，连成体系<span>。</span></h1><p>知道它属于哪里，什么时候用，以及能和什么组合。</p></div><span class="edition">2026<br><small>中文重构版</small></span></section>
+    <div id="content"></div>
+  </main>
+  <aside id="detail" class="detail" aria-label="知识详情"></aside>
+</div>
+<div id="toast" role="status"></div>
+<noscript><p>交互导图需要 JavaScript。也可阅读 <a href="./KNOWLEDGE.md">完整文字版知识地图</a>。</p></noscript>
+<script type="module" src="./app.js"></script>
+</body></html>
