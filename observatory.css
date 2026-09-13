@@ -1,0 +1,647 @@
+/* Observatory edition: quiet chrome, luminous hierarchy, readable inspection. */
+:root {
+  --bg: #070b14;
+  --paper: #101623;
+  --muted: #9daac0;
+  --line: #253044;
+  --accent: #a7c8f3;
+}
+body {
+  background: radial-gradient(ellipse at 48% 0%, #192338 0, #080c15 60%);
+  font-family: "Inter", "Segoe UI", "Microsoft YaHei", sans-serif;
+}
+.topbar {
+  background: #0b101be8;
+  border-bottom: 1px solid #a9bed018;
+  height: 72px;
+  backdrop-filter: blur(24px);
+}
+.brand-mark {
+  background: radial-gradient(circle at 30% 20%, #dce9f8, #6e8ba9 45%, #24394e);
+  border-color: #ccdeed5c;
+  box-shadow:
+    0 0 22px #91b6e52a,
+    inset -5px -5px 12px #0b192a88;
+}
+.topbar nav {
+  gap: 5px;
+  background: #02070d60;
+  border: 1px solid #ffffff0b;
+  padding: 5px;
+  border-radius: 12px;
+  height: 43px;
+}
+.topbar nav button {
+  border-radius: 8px;
+  padding: 0 19px;
+  color: #9cabc3;
+}
+.topbar nav button.active {
+  background: linear-gradient(180deg, #263449, #1b2739);
+  color: #eff5ff;
+  box-shadow:
+    inset 0 1px #ffffff15,
+    0 3px 12px #0002;
+}
+.topbar nav button.active:after {
+  display: none;
+}
+.github {
+  border-radius: 8px;
+  background: transparent;
+}
+.app-shell {
+  grid-template-columns: 206px minmax(0, 1fr) 300px;
+}
+.sidebar {
+  background: linear-gradient(180deg, #0c121d, #090e18);
+  border-color: #c6d9f012;
+  padding: 28px 18px;
+}
+.sidebar h2 {
+  font-size: 24px;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+.eyebrow {
+  font-weight: 500;
+}
+.sidebar > .eyebrow {
+  color: #96b1c9;
+  letter-spacing: 1.8px;
+}
+.search-box {
+  background: #ffffff04;
+  border-color: #d1e3ff20;
+  border-radius: 10px;
+  height: 43px;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.search-box:focus-within {
+  outline: none;
+  border-color: #99bfd175;
+  box-shadow: 0 0 0 3px #91bada0c;
+}
+.search-box input {
+  font-size: 11px;
+}
+select {
+  border-radius: 8px;
+  background: #131d2b;
+}
+#domain-nav {
+  counter-reset: sector;
+}
+#domain-nav button {
+  border: 1px solid transparent;
+  border-radius: 9px;
+  padding: 10px 8px;
+  margin-bottom: 3px;
+  font-size: 11px;
+  transition:
+    background 0.18s,
+    border-color 0.18s;
+}
+#domain-nav button.active {
+  background: linear-gradient(110deg, #95bfdf1b, #819cd20a);
+  border-color: #abc4e51e;
+}
+#domain-nav button:not(:first-child):after {
+  counter-increment: sector;
+  content: "0" counter(sector);
+  margin-left: auto;
+  color: #667790;
+  font: 9px monospace;
+  letter-spacing: 1px;
+}
+.sidebar-foot {
+  font-size: 10px;
+  border-color: #a7bcdb18;
+  line-height: 2;
+}
+#workspace {
+  padding: 29px 25px 20px;
+}
+.intro {
+  margin-bottom: 24px;
+}
+.intro h1 {
+  font-size: clamp(23px, 2.1vw, 34px);
+  letter-spacing: 1px;
+  line-height: 1.4;
+  font-weight: 400;
+  margin: 10px 0;
+}
+.intro h1 > span {
+  color: #c9af7a;
+}
+.intro .eyebrow {
+  color: #bba57e;
+  letter-spacing: 3px;
+  font-size: 9px;
+}
+.intro p:last-child {
+  font-size: 12px;
+  color: #8f9eb5;
+}
+.edition {
+  border: 1px solid #c4a8782a;
+  border-radius: 10px;
+  padding: 8px 13px;
+  font-size: 22px;
+  color: #c4b18e;
+  letter-spacing: 1px;
+}
+.edition small {
+  color: #8b96a9;
+  font-family: "Segoe UI", sans-serif;
+  letter-spacing: 1px;
+}
+.universe-toolbar {
+  gap: 9px;
+  margin-bottom: 13px;
+}
+.layout-switch {
+  background: #ffffff04;
+  border-color: #adc5e11a;
+  border-radius: 10px;
+  padding: 4px;
+}
+.layout-switch button {
+  border-radius: 7px;
+  padding: 7px 13px;
+}
+.layout-switch button.active {
+  background: linear-gradient(180deg, #2a3a50, #1f2d41);
+  box-shadow: inset 0 1px #c5deff1f;
+}
+.soft-btn {
+  border-radius: 8px;
+  background: #172234;
+  border-color: #c0d7f222;
+  padding: 8px 10px;
+  transition:
+    background 0.18s,
+    border-color 0.18s;
+}
+.soft-btn:hover {
+  border-color: #b8d9ff55;
+  background: #26394f;
+}
+.universe-count {
+  color: #a0adc0;
+  font-variant-numeric: tabular-nums;
+}
+.universe-frame {
+  border-radius: 20px;
+  border-color: #b0cef328;
+  background: #080f1a;
+  box-shadow:
+    0 18px 65px #0004,
+    inset 0 1px #c8dfff0b;
+}
+.universe-frame:before {
+  background:
+    radial-gradient(ellipse at 30% 18%, #3651691d, transparent 47%),
+    radial-gradient(ellipse at 76% 82%, #6152691a, transparent 48%),
+    radial-gradient(ellipse at 50% 50%, transparent 40%, #02050c90);
+}
+#universe {
+  height: calc(100vh - 320px);
+  min-height: 490px;
+  background-image:
+    radial-gradient(circle at 12px 19px, #d9e0ff99 0.55px, transparent 1px),
+    radial-gradient(circle at 42px 51px, #c2cffe55 0.6px, transparent 1px);
+  background-size:
+    197px 179px,
+    317px 271px;
+}
+.map-controls {
+  border-radius: 10px;
+  background: #111d2be6;
+  backdrop-filter: blur(16px);
+  border-color: #b2c9e322;
+  right: 17px;
+  top: 17px;
+  padding: 5px;
+}
+.map-controls button {
+  min-width: 30px;
+  min-height: 28px;
+}
+.canvas-scale {
+  color: #a4b4c9;
+  top: 25px;
+  font:
+    10px "Segoe UI",
+    sans-serif;
+  letter-spacing: 1px;
+}
+.canvas-hint {
+  color: #a2b3cc;
+  font-size: 10px;
+}
+.mini-map {
+  background: #0d1824c9;
+  backdrop-filter: blur(12px);
+  border-color: #b3cbe028;
+  border-radius: 12px;
+}
+.planet-label {
+  letter-spacing: 0.4px;
+}
+.planet-node {
+  transition: opacity 0.22s;
+}
+.planet-node .planet-body {
+  transition: filter 0.2s;
+}
+.planet-node.selected .planet-body {
+  filter: drop-shadow(0 0 12px #d3eaffbb);
+}
+.planet-node.off-focus {
+  opacity: 0.17;
+}
+.hierarchy-edge {
+  transition: stroke-opacity 0.22s;
+}
+.ancestry-edge {
+  filter: drop-shadow(0 0 3px #b9d8ff80);
+}
+.universe-options {
+  padding: 17px 3px 12px;
+  font-size: 11px;
+  gap: 13px;
+  color: #a4b3c9;
+}
+.universe-options input {
+  accent-color: #99b9d5;
+}
+.cosmic-caption {
+  background: transparent;
+  border: 0;
+  padding: 5px 3px;
+  color: #8d9db6;
+}
+.cosmic-caption span {
+  color: #75859d;
+}
+.detail {
+  background: linear-gradient(155deg, #121d2a, #0b121d 65%);
+  border-color: #c0d7f215;
+  padding: 27px 22px;
+}
+.detail h2 {
+  font-size: 25px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+}
+.detail-summary,
+.detail-block p {
+  font-size: 12px;
+  color: #a6b6cd;
+  line-height: 1.95;
+}
+.detail .eyebrow {
+  color: #a4b6cc;
+  letter-spacing: 1.8px;
+}
+.badge {
+  background: #c8b27d14;
+  color: #c9ba98;
+  border: 1px solid #c8b27d29;
+  border-radius: 5px;
+}
+.inspector-planet {
+  width: 116px;
+  height: 116px;
+  margin: 35px auto 31px;
+  background: radial-gradient(
+    ellipse at 28% 20%,
+    #e4f2f8,
+    #aac4d4 13%,
+    #6b8da8 35%,
+    #243d58 66%,
+    #080f1c 87%
+  );
+  box-shadow:
+    inset -15px -12px 30px #0006,
+    0 0 65px #7eadcb23;
+}
+.inspector-planet:after {
+  width: 182px;
+  height: 44px;
+  left: -33px;
+  top: 37px;
+  border-color: #c5d9e78a;
+  box-shadow:
+    0 0 0 4px #c5d9e713,
+    0 0 0 9px #c5d9e707;
+}
+.welcome-steps {
+  gap: 22px;
+}
+.welcome-steps strong {
+  font-size: 12px;
+}
+.welcome-steps p {
+  font-size: 11px;
+  color: #92a5bf;
+}
+.step-no {
+  background: #ffffff05;
+  border: 1px solid #b9d1ed20;
+  color: #b8cde1;
+}
+.example-link {
+  border-radius: 9px;
+  background: linear-gradient(120deg, #afcde20c, #ffffff02);
+  border-color: #bed7f21c;
+  padding: 12px;
+}
+.detail-block {
+  padding-top: 6px;
+}
+.detail-block h3 {
+  font-size: 11px;
+  letter-spacing: 0.5px;
+  color: #c5d5e8;
+}
+.detail-ancestry button {
+  font-size: 10px;
+}
+.example {
+  border-radius: 9px;
+  background: #a7cddd09;
+  border-left: 2px solid #91b4c7;
+}
+.child-links {
+  border-color: #779dba40;
+  gap: 7px;
+}
+.child-links button {
+  padding: 9px;
+  background: #a2c4e30a;
+  font-size: 11px;
+  border: 1px solid #a2c4e30b;
+  border-radius: 7px;
+}
+.child-links button:hover,
+.typed-relations button:hover {
+  background: #a2c4e31c;
+}
+.typed-relations button {
+  border-radius: 8px;
+  background: #ffffff02;
+  padding: 10px;
+}
+.source-links a {
+  font-size: 11px;
+}
+.chooser,
+.recipe,
+.update-block {
+  border-radius: 15px;
+  background: linear-gradient(145deg, #182334, #101825);
+  border-color: #b6d0ed1c;
+  box-shadow: 0 10px 30px #0002;
+}
+.node-tooltip {
+  position: absolute;
+  z-index: 4;
+  width: 240px;
+  max-width: calc(100% - 24px);
+  padding: 14px 16px;
+  background: #101c2cf2;
+  border: 1px solid #b3d0eb35;
+  border-top: 2px solid var(--node-color, #bdd5ed);
+  box-shadow: 0 14px 35px #0006;
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  pointer-events: none;
+}
+.node-tooltip[hidden] {
+  display: none;
+}
+.node-tooltip strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #e1ebf7;
+  margin: 4px 0 7px;
+}
+.node-tooltip p {
+  font-size: 11px;
+  color: #a3b4cc;
+  line-height: 1.7;
+  margin: 0;
+}
+.node-tooltip small {
+  font-size: 9px;
+  color: #859ab5;
+  letter-spacing: 0.8px;
+}
+.immersive .topbar,
+.immersive .sidebar,
+.immersive .intro,
+.immersive .detail,
+.immersive .cosmic-caption {
+  display: none !important;
+}
+.immersive .app-shell {
+  display: block;
+  min-height: 100vh;
+}
+.immersive #workspace {
+  padding: 16px 22px;
+}
+.immersive #universe {
+  height: calc(100vh - 145px);
+  max-height: none;
+  min-height: 250px;
+}
+.immersive .universe-frame {
+  border-radius: 16px;
+}
+.immersive .universe-toolbar {
+  margin-bottom: 12px;
+}
+.immersive.has-selection .detail {
+  display: block !important;
+  position: fixed;
+  top: 83px;
+  right: 26px;
+  bottom: 70px;
+  width: 300px;
+  min-height: 0;
+  max-height: calc(100vh - 153px);
+  z-index: 5;
+  border: 1px solid #bdd5ef2a;
+  border-radius: 15px;
+  box-shadow: 0 18px 50px #0007;
+  background: #101a28f2;
+  backdrop-filter: blur(20px);
+}
+@media (max-width: 760px) {
+  .immersive.has-selection .detail {
+    top: auto;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-height: 160px;
+  }
+  .immersive.has-selection.inspector-expanded .detail {
+    max-height: 44vh;
+  }
+}
+@media (min-width: 1700px) {
+  .app-shell {
+    grid-template-columns: 220px minmax(0, 1fr) 320px;
+  }
+  #workspace {
+    padding: 32px;
+  }
+}
+@media (max-width: 1250px) {
+  .app-shell {
+    grid-template-columns: 176px minmax(0, 1fr) 272px;
+  }
+  #workspace {
+    padding: 24px 16px;
+  }
+  .sidebar {
+    padding: 24px 12px;
+  }
+  .intro h1 {
+    font-size: 25px;
+  }
+  .detail {
+    padding: 25px 18px;
+  }
+  #universe {
+    min-height: 460px;
+  }
+  .universe-toolbar {
+    gap: 6px;
+  }
+  .layout-switch button {
+    padding: 6px 9px;
+  }
+}
+@media (max-width: 1000px) {
+  .app-shell {
+    grid-template-columns: 174px minmax(0, 1fr);
+  }
+  .detail {
+    background: #0e1825f5;
+    backdrop-filter: blur(22px);
+  }
+}
+@media (max-width: 760px) {
+  .app-shell {
+    display: block;
+  }
+  .topbar {
+    height: auto;
+    min-height: 106px;
+  }
+  .topbar nav {
+    height: 37px;
+    padding: 3px;
+    margin: 6px 0;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .topbar nav button {
+    padding: 0 11px;
+    font-size: 11px;
+  }
+  .sidebar {
+    padding: 12px 15px;
+  }
+  #domain-nav button {
+    margin-bottom: 0;
+  }
+  #domain-nav button:after {
+    display: none;
+  }
+  #workspace {
+    padding: 21px 13px 16px;
+  }
+  .intro h1 {
+    font-size: 23px;
+  }
+  .intro p:last-child {
+    font-size: 11px;
+  }
+  .intro .eyebrow {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+  .universe-frame {
+    border-radius: 15px;
+  }
+  #universe {
+    min-height: 370px;
+    height: 60vh;
+  }
+  .universe-toolbar {
+    gap: 6px;
+  }
+  .layout-switch button {
+    font-size: 10px;
+    padding: 6px 7px;
+  }
+  .universe-toolbar .soft-btn {
+    margin-left: 0;
+    font-size: 10px;
+    padding: 8px;
+  }
+  #immersive-toggle {
+    margin-left: auto;
+  }
+  .map-controls {
+    top: 11px;
+    right: 11px;
+  }
+  .map-controls button {
+    min-width: 27px;
+  }
+  .canvas-scale {
+    top: 62px;
+    left: 14px;
+    font-size: 9px;
+  }
+  .canvas-hint {
+    max-width: 160px;
+    font-size: 9px;
+  }
+  .universe-options {
+    font-size: 9px;
+    gap: 11px;
+  }
+  .detail-top {
+    background: #0e1825;
+  }
+  .node-tooltip {
+    display: none;
+  }
+  .immersive #workspace {
+    padding: 12px 10px;
+  }
+  .immersive #universe {
+    height: calc(100dvh - 150px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    transition: none !important;
+    animation: none !important;
+    scroll-behavior: auto !important;
+  }
+}

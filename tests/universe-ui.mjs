@@ -67,6 +67,28 @@ try {
   if (process.env.SMOKE_ONLY) {
     console.log("Smoke complete");
   } else {
+    await page.locator('.planet-node[data-id="learning"] .planet-body').hover();
+    assert.equal(
+      await page.locator(".node-tooltip strong").innerText(),
+      nodeMap.get("learning").title,
+    );
+    const normalCanvas = await page.locator("#universe").boundingBox();
+    await page.locator("#immersive-toggle").click();
+    await page.waitForFunction(() =>
+      document.body.classList.contains("immersive"),
+    );
+    const immersiveCanvas = await page.locator("#universe").boundingBox();
+    assert.ok(immersiveCanvas.width > normalCanvas.width);
+    await page.waitForFunction(() => Number(document.querySelector('.universe-svg').dataset.zoom) > 0.18);
+    await page.screenshot({
+      path: "test-results/universe-immersive.png",
+      fullPage: true,
+    });
+    await page.keyboard.press("Escape");
+    assert.equal(
+      await page.locator("#immersive-toggle").getAttribute("aria-pressed"),
+      "false",
+    );
     const beforeDouble = Number(
       await page.locator(".universe-svg").getAttribute("data-zoom"),
     );

@@ -12,7 +12,7 @@ import {
   relationTypes,
   relations,
 } from "./universe-data.js";
-import { createUniverse } from "./universe.js";
+import { createUniverse } from "./universe.js?v=2.2.0";
 const $ = (s) => document.querySelector(s);
 const esc = (s) =>
   String(s).replace(
@@ -109,7 +109,7 @@ function pathStrip() {
 function renderMap() {
   if (!document.querySelector("#universe")) {
     $("#content").innerHTML =
-      `<div class="universe-toolbar"><div class="layout-switch" aria-label="图形布局"><button id="layout-orbit" class="active" aria-pressed="true">星系布局</button><button id="layout-tree" aria-pressed="false">树形布局</button></div><span class="universe-count">${nodes.length} 星体 · ${hierarchyCount()} 条层级线</span><button class="soft-btn" id="export-svg">导出全图</button></div>
+      `<div class="universe-toolbar"><div class="layout-switch" aria-label="图形布局"><button id="layout-orbit" class="active" aria-pressed="true">星系布局</button><button id="layout-tree" aria-pressed="false">树形布局</button></div><span class="universe-count">${nodes.length} 星体 · ${hierarchyCount()} 条层级线</span><button class="soft-btn" id="immersive-toggle" aria-pressed="false">⛶ 沉浸</button><button class="soft-btn" id="export-svg">导出全图</button></div>
    <div class="universe-frame"><div id="universe"></div><div class="map-controls"><button id="zoom-in" aria-label="放大">+</button><button id="zoom-out" aria-label="缩小">−</button><button id="fit-all">全景</button><button id="expand-all">全部展开</button></div></div>
    <div class="universe-options"><span class="edge-legend"><i class="solid"></i>层级包含</span><label><input type="checkbox" id="relations-toggle" checked>跨树关联</label><label><input type="checkbox" id="all-relations">显示全部关联</label><label><input type="checkbox" id="all-labels">所有名称</label><label class="depth-control">层级 <select id="depth-limit" aria-label="显示层级"><option value="99">全部</option><option value="2">2 层</option><option value="3">3 层</option><option value="4">4 层</option></select></label></div>
    <div class="cosmic-caption">同一张图，逐层看清。金色虚线：依赖 · 蓝色虚线：适用 · 紫色虚线：可组合。<span>放大后自动显示细分名称；点击星体高亮祖先与关联。</span></div>`;
@@ -119,6 +119,12 @@ function renderMap() {
     $("#universe").addEventListener("depthreset", () => {
       $("#depth-limit").value = "99";
     });
+    $("#immersive-toggle").onclick = () => {
+      const active = document.body.classList.toggle("immersive");
+      $("#immersive-toggle").textContent = active ? "↙ 退出沉浸" : "⛶ 沉浸";
+      $("#immersive-toggle").setAttribute("aria-pressed", String(active));
+      requestAnimationFrame(() => requestAnimationFrame(() => galaxy.home()));
+    };
     $("#zoom-in").onclick = () => galaxy.zoomBy(1.35);
     $("#zoom-out").onclick = () => galaxy.zoomBy(1 / 1.35);
     $("#fit-all").onclick = () => galaxy.home();
@@ -149,7 +155,7 @@ function renderDetail() {
   const n = byId.get(state.node);
   if (!n) {
     $("#detail").innerHTML =
-      `<div class="detail-top"><p class="eyebrow">WELCOME, EXPLORER</p><span class="badge">知识宇宙 2.1</span></div><div class="inspector-planet" aria-hidden="true"></div><h2>每一颗星，<br>都连着一条知识脉络。</h2><p class="detail-summary">这里的 ${nodes.length} 个节点都在同一张画布上。大星体是模块，沿连线继续探索子类、算法与具体技巧。</p><ol class="welcome-steps"><li><span class="step-no">01</span><div><strong>放大，而不是翻页</strong><p>拖动探索，滚轮缩放；双击星体聚焦整棵子树。</p></div></li><li><span class="step-no">02</span><div><strong>看清父子关系</strong><p>点选星体后，祖先路径会亮起。树形布局适合逐层阅读。</p></div></li><li><span class="step-no">03</span><div><strong>跨星系理解方法</strong><p>虚线标明适用、依赖、组合或对照；箭头表示方向。</p></div></li></ol><button class="example-link" data-node="supervised">监督学习有哪些子类？ ↗</button><button class="example-link" data-node="unsupervised">无监督学习怎么继续分？ ↗</button><button class="example-link" data-node="schedules">学习率调度有哪些方法？ ↗</button><p class="reviewed">层级线表示知识组织；跨维度方法允许多重关联。学习前置“依赖”是建议，不是强制课程顺序。</p>`;
+      `<div class="detail-top"><p class="eyebrow">WELCOME, EXPLORER</p><span class="badge">观测台 2.2</span></div><div class="inspector-planet" aria-hidden="true"></div><h2>每一颗星，<br>都连着一条知识脉络。</h2><p class="detail-summary">这里的 ${nodes.length} 个节点都在同一张画布上。大星体是模块，沿连线继续探索子类、算法与具体技巧。</p><ol class="welcome-steps"><li><span class="step-no">01</span><div><strong>放大，而不是翻页</strong><p>拖动探索，滚轮缩放；双击星体聚焦整棵子树。</p></div></li><li><span class="step-no">02</span><div><strong>看清父子关系</strong><p>点选星体后，祖先路径会亮起。树形布局适合逐层阅读。</p></div></li><li><span class="step-no">03</span><div><strong>跨星系理解方法</strong><p>虚线标明适用、依赖、组合或对照；箭头表示方向。</p></div></li></ol><button class="example-link" data-node="supervised">监督学习有哪些子类？ ↗</button><button class="example-link" data-node="unsupervised">无监督学习怎么继续分？ ↗</button><button class="example-link" data-node="schedules">学习率调度有哪些方法？ ↗</button><p class="reviewed">层级线表示知识组织；跨维度方法允许多重关联。学习前置“依赖”是建议，不是强制课程顺序。</p>`;
     return;
   }
   const chain = ancestors(n.id),
@@ -408,3 +414,8 @@ function exportSvg() {
   toast("已导出所有层级与名称");
 }
 route();
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && document.body.classList.contains("immersive"))
+    document.querySelector("#immersive-toggle")?.click();
+});
