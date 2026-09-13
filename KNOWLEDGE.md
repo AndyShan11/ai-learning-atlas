@@ -1,6 +1,6 @@
-# 知图 · 知识宇宙 2.0
+# 知图 · 知识宇宙 2.1
 
-结构更新：2026-09-13。220 个节点（含模块、子类、方法），219 条层级连线，55 条跨树关系。
+结构更新：2026-09-13。308 个节点（含模块、子类、方法），307 条层级连线，119 条跨树关系。
 
 [打开交互版](https://andyshan11.github.io/ai-learning-atlas/)
 
@@ -19,6 +19,9 @@
         - [窗口函数](https://andyshan11.github.io/ai-learning-atlas/#node=sql-window)
       - [DuckDB / Polars](https://andyshan11.github.io/ai-learning-atlas/#node=duckdb)
       - [可视化与表达](https://andyshan11.github.io/ai-learning-atlas/#node=visual)
+      - [NumPy / pandas / Polars](https://andyshan11.github.io/ai-learning-atlas/#node=dataframes)
+      - [电子表格与透视分析](https://andyshan11.github.io/ai-learning-atlas/#node=spreadsheet)
+        - [Power Query](https://andyshan11.github.io/ai-learning-atlas/#node=power-query)
     - [数学基础](https://andyshan11.github.io/ai-learning-atlas/#node=math-tree)
       - [概率与分布](https://andyshan11.github.io/ai-learning-atlas/#node=probability)
         - [条件概率与贝叶斯](https://andyshan11.github.io/ai-learning-atlas/#node=bayes)
@@ -32,21 +35,32 @@
       - [Bootstrap](https://andyshan11.github.io/ai-learning-atlas/#node=bootstrap)
       - [假设检验](https://andyshan11.github.io/ai-learning-atlas/#node=hypothesis)
       - [样本量与检验功效](https://andyshan11.github.io/ai-learning-atlas/#node=power)
+      - [描述统计与分布检查](https://andyshan11.github.io/ai-learning-atlas/#node=descriptive-stats)
+      - [效应大小与实际意义](https://andyshan11.github.io/ai-learning-atlas/#node=effect-size)
+      - [多重检验与 FDR](https://andyshan11.github.io/ai-learning-atlas/#node=multiple-testing)
   - [业务分析与因果](https://andyshan11.github.io/ai-learning-atlas/#node=analysis)
     - [描述与诊断](https://andyshan11.github.io/ai-learning-atlas/#node=business-description)
       - [指标体系](https://andyshan11.github.io/ai-learning-atlas/#node=metrics)
         - [漏斗分析](https://andyshan11.github.io/ai-learning-atlas/#node=funnel)
         - [留存与分群](https://andyshan11.github.io/ai-learning-atlas/#node=cohort)
+        - [比率指标与分析单位](https://andyshan11.github.io/ai-learning-atlas/#node=ratio-metrics)
       - [探索性数据分析 EDA](https://andyshan11.github.io/ai-learning-atlas/#node=eda)
     - [实验分析](https://andyshan11.github.io/ai-learning-atlas/#node=experiments)
       - [A/B 实验](https://andyshan11.github.io/ai-learning-atlas/#node=ab)
         - [CUPED 方差缩减](https://andyshan11.github.io/ai-learning-atlas/#node=cuped)
+        - [随机化与实验质量检查](https://andyshan11.github.io/ai-learning-atlas/#node=experiment-checks)
+        - [固定周期与序贯检验](https://andyshan11.github.io/ai-learning-atlas/#node=sequential-testing)
     - [因果推断与混杂](https://andyshan11.github.io/ai-learning-atlas/#node=causal)
       - [因果图 DAG](https://andyshan11.github.io/ai-learning-atlas/#node=dag)
       - [双重差分 DiD](https://andyshan11.github.io/ai-learning-atlas/#node=did)
       - [匹配与倾向评分](https://andyshan11.github.io/ai-learning-atlas/#node=matching)
       - [工具变量 IV](https://andyshan11.github.io/ai-learning-atlas/#node=instrument)
       - [断点回归 RDD](https://andyshan11.github.io/ai-learning-atlas/#node=rdd)
+      - [混杂、重叠与敏感性分析](https://andyshan11.github.io/ai-learning-atlas/#node=causal-sensitivity)
+    - [BI 与分析交付](https://andyshan11.github.io/ai-learning-atlas/#node=bi-reporting)
+      - [事实表、维度表与粒度](https://andyshan11.github.io/ai-learning-atlas/#node=star-schema)
+      - [DAX 与筛选上下文](https://andyshan11.github.io/ai-learning-atlas/#node=dax)
+      - [结论、证据与行动](https://andyshan11.github.io/ai-learning-atlas/#node=decision-report)
   - [学习方式](https://andyshan11.github.io/ai-learning-atlas/#node=learning)
     - [监督学习](https://andyshan11.github.io/ai-learning-atlas/#node=supervised)
       - [分类任务](https://andyshan11.github.io/ai-learning-atlas/#node=classification)
@@ -57,6 +71,7 @@
         - [点预测回归](https://andyshan11.github.io/ai-learning-atlas/#node=point-regression)
         - [分位数回归](https://andyshan11.github.io/ai-learning-atlas/#node=quantile)
       - [排序与推荐](https://andyshan11.github.io/ai-learning-atlas/#node=ranking)
+        - [Pointwise / Pairwise / Listwise](https://andyshan11.github.io/ai-learning-atlas/#node=ranking-objectives)
     - [无监督学习](https://andyshan11.github.io/ai-learning-atlas/#node=unsupervised)
       - [聚类](https://andyshan11.github.io/ai-learning-atlas/#node=kmeans)
         - [K-means](https://andyshan11.github.io/ai-learning-atlas/#node=kmeans-method)
@@ -65,11 +80,14 @@
       - [降维与表示压缩](https://andyshan11.github.io/ai-learning-atlas/#node=pca)
         - [PCA 线性降维](https://andyshan11.github.io/ai-learning-atlas/#node=pca-method)
         - [UMAP / t-SNE](https://andyshan11.github.io/ai-learning-atlas/#node=umap)
+        - [NMF 非负矩阵分解](https://andyshan11.github.io/ai-learning-atlas/#node=nmf)
+        - [t-SNE](https://andyshan11.github.io/ai-learning-atlas/#node=tsne)
       - [密度估计](https://andyshan11.github.io/ai-learning-atlas/#node=density)
         - [高斯混合模型 GMM](https://andyshan11.github.io/ai-learning-atlas/#node=gmm)
         - [核密度估计 KDE](https://andyshan11.github.io/ai-learning-atlas/#node=kde)
       - [异常检测](https://andyshan11.github.io/ai-learning-atlas/#node=anomaly)
         - [Isolation Forest](https://andyshan11.github.io/ai-learning-atlas/#node=isolation)
+        - [LOF 局部异常因子](https://andyshan11.github.io/ai-learning-atlas/#node=lof)
     - [自监督学习](https://andyshan11.github.io/ai-learning-atlas/#node=self-supervised)
       - [掩码预测](https://andyshan11.github.io/ai-learning-atlas/#node=masked)
       - [自回归预测](https://andyshan11.github.io/ai-learning-atlas/#node=autoregressive)
@@ -93,10 +111,18 @@
             - [SAC](https://andyshan11.github.io/ai-learning-atlas/#node=sac-method)
             - [TD3](https://andyshan11.github.io/ai-learning-atlas/#node=td3)
       - [世界模型 / 模型式 RL](https://andyshan11.github.io/ai-learning-atlas/#node=world-model)
+        - [Dyna：真实经验与模拟经验](https://andyshan11.github.io/ai-learning-atlas/#node=dyna)
+        - [基于模型的规划](https://andyshan11.github.io/ai-learning-atlas/#node=model-planning)
       - [离线 RL · CQL / IQL](https://andyshan11.github.io/ai-learning-atlas/#node=offline-rl)
         - [CQL](https://andyshan11.github.io/ai-learning-atlas/#node=cql-method)
         - [IQL](https://andyshan11.github.io/ai-learning-atlas/#node=iql-method)
     - [多臂老虎机](https://andyshan11.github.io/ai-learning-atlas/#node=bandit)
+      - [UCB 上置信界](https://andyshan11.github.io/ai-learning-atlas/#node=ucb)
+      - [Thompson Sampling](https://andyshan11.github.io/ai-learning-atlas/#node=thompson)
+    - [其他学习设置（可交叉）](https://andyshan11.github.io/ai-learning-atlas/#node=learning-settings)
+      - [主动学习](https://andyshan11.github.io/ai-learning-atlas/#node=active-learning)
+      - [在线 / 增量学习](https://andyshan11.github.io/ai-learning-atlas/#node=online-learning)
+      - [迁移学习与域适配](https://andyshan11.github.io/ai-learning-atlas/#node=transfer-learning)
   - [模型与任务](https://andyshan11.github.io/ai-learning-atlas/#node=models)
     - [经典模型家族](https://andyshan11.github.io/ai-learning-atlas/#node=classic-models)
       - [线性与广义线性](https://andyshan11.github.io/ai-learning-atlas/#node=linear-family)
@@ -104,6 +130,7 @@
           - [Ridge · L2 正则](https://andyshan11.github.io/ai-learning-atlas/#node=ridge)
           - [Lasso / Elastic Net](https://andyshan11.github.io/ai-learning-atlas/#node=lasso)
         - [逻辑回归](https://andyshan11.github.io/ai-learning-atlas/#node=logistic)
+        - [Poisson / Tweedie 回归](https://andyshan11.github.io/ai-learning-atlas/#node=glm-count)
       - [树与提升模型](https://andyshan11.github.io/ai-learning-atlas/#node=tree-models)
         - [决策树 CART](https://andyshan11.github.io/ai-learning-atlas/#node=decision-tree)
         - [随机森林](https://andyshan11.github.io/ai-learning-atlas/#node=random-forest)
@@ -115,6 +142,7 @@
         - [SVM / 核方法](https://andyshan11.github.io/ai-learning-atlas/#node=svm)
         - [K 近邻 KNN](https://andyshan11.github.io/ai-learning-atlas/#node=knn)
         - [朴素贝叶斯](https://andyshan11.github.io/ai-learning-atlas/#node=naive-bayes)
+        - [高斯过程 GP](https://andyshan11.github.io/ai-learning-atlas/#node=gaussian-process)
     - [深度学习](https://andyshan11.github.io/ai-learning-atlas/#node=deep-learning)
       - [MLP · 多层感知机](https://andyshan11.github.io/ai-learning-atlas/#node=mlp)
       - [CNN · 卷积网络](https://andyshan11.github.io/ai-learning-atlas/#node=cnn)
@@ -125,6 +153,7 @@
         - [解码器 · GPT 类](https://andyshan11.github.io/ai-learning-atlas/#node=decoder)
         - [编码器—解码器 · T5 类](https://andyshan11.github.io/ai-learning-atlas/#node=encoder-decoder)
         - [ViT · 视觉 Transformer](https://andyshan11.github.io/ai-learning-atlas/#node=vit)
+        - [注意力与位置表示](https://andyshan11.github.io/ai-learning-atlas/#node=attention)
       - [循环网络 RNN](https://andyshan11.github.io/ai-learning-atlas/#node=rnn)
         - [基础 RNN](https://andyshan11.github.io/ai-learning-atlas/#node=vanilla-rnn)
         - [LSTM](https://andyshan11.github.io/ai-learning-atlas/#node=lstm)
@@ -133,17 +162,30 @@
         - [GCN](https://andyshan11.github.io/ai-learning-atlas/#node=gcn)
         - [GAT](https://andyshan11.github.io/ai-learning-atlas/#node=gat)
         - [GraphSAGE](https://andyshan11.github.io/ai-learning-atlas/#node=graphsage)
+      - [自编码器 AE](https://andyshan11.github.io/ai-learning-atlas/#node=autoencoder)
+      - [状态空间模型 · Mamba](https://andyshan11.github.io/ai-learning-atlas/#node=ssm)
+      - [稀疏混合专家 MoE](https://andyshan11.github.io/ai-learning-atlas/#node=moe)
+      - [BatchNorm / LayerNorm / RMSNorm](https://andyshan11.github.io/ai-learning-atlas/#node=normalization)
     - [时间序列 · 统计与机器学习](https://andyshan11.github.io/ai-learning-atlas/#node=time-series)
       - [朴素 / 季节基线](https://andyshan11.github.io/ai-learning-atlas/#node=seasonal-naive)
       - [ARIMA / SARIMA](https://andyshan11.github.io/ai-learning-atlas/#node=arima)
       - [指数平滑 ETS](https://andyshan11.github.io/ai-learning-atlas/#node=ets)
+      - [时间序列基础模型 · Chronos](https://andyshan11.github.io/ai-learning-atlas/#node=ts-foundation)
     - [TabPFN · 表格基础模型](https://andyshan11.github.io/ai-learning-atlas/#node=tabpfn)
+    - [专门任务与模型入口](https://andyshan11.github.io/ai-learning-atlas/#node=specialized-tasks)
+      - [生存分析与删失数据](https://andyshan11.github.io/ai-learning-atlas/#node=survival-analysis)
+      - [推荐与协同过滤](https://andyshan11.github.io/ai-learning-atlas/#node=recommendation)
+      - [检测与分割](https://andyshan11.github.io/ai-learning-atlas/#node=detection-segmentation)
   - [验证与特征](https://andyshan11.github.io/ai-learning-atlas/#node=workflow)
     - [验证集与交叉验证](https://andyshan11.github.io/ai-learning-atlas/#node=validation)
       - [随机 / 分层切分](https://andyshan11.github.io/ai-learning-atlas/#node=random-split)
       - [按用户 / 实体分组切分](https://andyshan11.github.io/ai-learning-atlas/#node=group-split)
       - [时间切分与回测](https://andyshan11.github.io/ai-learning-atlas/#node=time-split)
       - [数据泄漏检查](https://andyshan11.github.io/ai-learning-atlas/#node=leakage)
+      - [分层交叉验证](https://andyshan11.github.io/ai-learning-atlas/#node=stratified-cv)
+      - [嵌套交叉验证](https://andyshan11.github.io/ai-learning-atlas/#node=nested-cv)
+      - [OOF 折外预测](https://andyshan11.github.io/ai-learning-atlas/#node=oof)
+      - [Pipeline 与折内预处理](https://andyshan11.github.io/ai-learning-atlas/#node=pipeline)
     - [特征工程](https://andyshan11.github.io/ai-learning-atlas/#node=features-tree)
       - [缺失值与异常值](https://andyshan11.github.io/ai-learning-atlas/#node=missing)
         - [均值 / 中位数 / 模型填补](https://andyshan11.github.io/ai-learning-atlas/#node=imputation)
@@ -154,11 +196,23 @@
       - [缩放与标准化](https://andyshan11.github.io/ai-learning-atlas/#node=scaling)
       - [滞后 / 滚动 / 交互特征](https://andyshan11.github.io/ai-learning-atlas/#node=lag)
       - [过滤 / 包装 / 嵌入式选择](https://andyshan11.github.io/ai-learning-atlas/#node=feature-select)
+      - [交互、聚合与目标变换](https://andyshan11.github.io/ai-learning-atlas/#node=feature-interactions)
     - [评估与实验迭代](https://andyshan11.github.io/ai-learning-atlas/#node=evaluation-tree)
       - [指标与目标对齐](https://andyshan11.github.io/ai-learning-atlas/#node=scoring)
+        - [分类：Precision / Recall / F1](https://andyshan11.github.io/ai-learning-atlas/#node=classification-metrics)
+        - [ROC-AUC / PR-AUC / Log Loss](https://andyshan11.github.io/ai-learning-atlas/#node=ranking-probability-metrics)
+        - [MAE / RMSE / 分位数损失](https://andyshan11.github.io/ai-learning-atlas/#node=regression-metrics)
       - [分组误差与消融](https://andyshan11.github.io/ai-learning-atlas/#node=error-analysis)
       - [SHAP / 特征重要性](https://andyshan11.github.io/ai-learning-atlas/#node=shap)
       - [超参数搜索 · Optuna](https://andyshan11.github.io/ai-learning-atlas/#node=optuna)
+      - [分布偏移与对抗验证](https://andyshan11.github.io/ai-learning-atlas/#node=distribution-check)
+      - [消融与单变量对比](https://andyshan11.github.io/ai-learning-atlas/#node=ablation)
+      - [榜单、规则与提交纪律](https://andyshan11.github.io/ai-learning-atlas/#node=leaderboard)
+    - [数据质量与问题定义](https://andyshan11.github.io/ai-learning-atlas/#node=data-quality)
+      - [MCAR / MAR / MNAR](https://andyshan11.github.io/ai-learning-atlas/#node=missing-mechanism)
+    - [类别不平衡处理](https://andyshan11.github.io/ai-learning-atlas/#node=imbalanced-learning)
+      - [类别权重与代价敏感学习](https://andyshan11.github.io/ai-learning-atlas/#node=class-weight)
+      - [过采样、欠采样与 SMOTE](https://andyshan11.github.io/ai-learning-atlas/#node=resampling)
   - [训练与后处理](https://andyshan11.github.io/ai-learning-atlas/#node=toolbox)
     - [训练目标与损失](https://andyshan11.github.io/ai-learning-atlas/#node=losses)
       - [交叉熵损失](https://andyshan11.github.io/ai-learning-atlas/#node=cross-entropy)
@@ -181,18 +235,26 @@
       - [正则化](https://andyshan11.github.io/ai-learning-atlas/#node=regularization)
         - [权重衰减](https://andyshan11.github.io/ai-learning-atlas/#node=weight-decay)
         - [Dropout](https://andyshan11.github.io/ai-learning-atlas/#node=dropout)
+        - [标签平滑](https://andyshan11.github.io/ai-learning-atlas/#node=label-smoothing)
       - [数据增强 / Mixup / CutMix](https://andyshan11.github.io/ai-learning-atlas/#node=augmentation)
+        - [MixUp / CutMix](https://andyshan11.github.io/ai-learning-atlas/#node=mixup-cutmix)
       - [混合精度 / 梯度累积](https://andyshan11.github.io/ai-learning-atlas/#node=amp)
       - [EMA / SWA](https://andyshan11.github.io/ai-learning-atlas/#node=ema)
+      - [训练显存与吞吐](https://andyshan11.github.io/ai-learning-atlas/#node=memory-training)
+        - [梯度累积](https://andyshan11.github.io/ai-learning-atlas/#node=gradient-accumulation)
+        - [激活检查点](https://andyshan11.github.io/ai-learning-atlas/#node=activation-checkpoint)
     - [预测后处理](https://andyshan11.github.io/ai-learning-atlas/#node=post-tree)
       - [概率校准](https://andyshan11.github.io/ai-learning-atlas/#node=calibration)
         - [温度缩放 Temperature scaling](https://andyshan11.github.io/ai-learning-atlas/#node=temperature)
         - [Platt / Isotonic 校准](https://andyshan11.github.io/ai-learning-atlas/#node=platt)
+        - [保序回归校准](https://andyshan11.github.io/ai-learning-atlas/#node=isotonic)
       - [分类阈值调整](https://andyshan11.github.io/ai-learning-atlas/#node=threshold)
       - [融合 / Stacking](https://andyshan11.github.io/ai-learning-atlas/#node=ensemble)
         - [Bagging / 平均融合](https://andyshan11.github.io/ai-learning-atlas/#node=bagging)
         - [Stacking · 二层融合](https://andyshan11.github.io/ai-learning-atlas/#node=stacking-method)
+        - [加权平均与 Blending](https://andyshan11.github.io/ai-learning-atlas/#node=blending)
       - [保形预测 Conformal prediction](https://andyshan11.github.io/ai-learning-atlas/#node=conformal)
+      - [测试时增强 TTA](https://andyshan11.github.io/ai-learning-atlas/#node=tta)
   - [基础模型与生成式 AI](https://andyshan11.github.io/ai-learning-atlas/#node=modern)
     - [预训练与迁移学习](https://andyshan11.github.io/ai-learning-atlas/#node=pretrained)
       - [Embedding / 语义向量](https://andyshan11.github.io/ai-learning-atlas/#node=embeddings)
@@ -208,15 +270,38 @@
       - [偏好与奖励后训练](https://andyshan11.github.io/ai-learning-atlas/#node=posttraining-tree)
         - [DPO · 直接偏好优化](https://andyshan11.github.io/ai-learning-atlas/#node=dpo)
         - [GRPO · 组相对策略优化](https://andyshan11.github.io/ai-learning-atlas/#node=grpo)
+        - [RLHF / RLVR 反馈来源](https://andyshan11.github.io/ai-learning-atlas/#node=reward-feedback)
     - [RAG · 检索增强生成](https://andyshan11.github.io/ai-learning-atlas/#node=rag)
       - [文档切分与索引](https://andyshan11.github.io/ai-learning-atlas/#node=chunking)
       - [混合检索与重排](https://andyshan11.github.io/ai-learning-atlas/#node=rerank)
       - [检索召回与忠实性](https://andyshan11.github.io/ai-learning-atlas/#node=rag-eval)
+        - [Recall@k / MRR / NDCG](https://andyshan11.github.io/ai-learning-atlas/#node=retrieval-metrics)
+        - [证据忠实度与回答正确性](https://andyshan11.github.io/ai-learning-atlas/#node=faithfulness)
+      - [检索方式](https://andyshan11.github.io/ai-learning-atlas/#node=retrieval-methods)
+        - [BM25 关键词检索](https://andyshan11.github.io/ai-learning-atlas/#node=bm25)
+        - [稠密向量检索](https://andyshan11.github.io/ai-learning-atlas/#node=dense-retrieval)
+        - [混合检索与结果融合](https://andyshan11.github.io/ai-learning-atlas/#node=hybrid-search)
     - [应用与效率](https://andyshan11.github.io/ai-learning-atlas/#node=system-tree)
       - [工具调用与 Agent](https://andyshan11.github.io/ai-learning-atlas/#node=agent)
+        - [固定工作流与自主循环](https://andyshan11.github.io/ai-learning-atlas/#node=agent-workflow)
+        - [工具调用与 MCP](https://andyshan11.github.io/ai-learning-atlas/#node=tool-protocol)
+        - [轨迹评估、权限与停止条件](https://andyshan11.github.io/ai-learning-atlas/#node=agent-evaluation)
       - [生成系统评估](https://andyshan11.github.io/ai-learning-atlas/#node=llm-eval)
       - [模型量化](https://andyshan11.github.io/ai-learning-atlas/#node=quantization)
       - [知识蒸馏](https://andyshan11.github.io/ai-learning-atlas/#node=distillation)
+      - [推理缓存与加速](https://andyshan11.github.io/ai-learning-atlas/#node=inference-efficiency)
+        - [KV Cache](https://andyshan11.github.io/ai-learning-atlas/#node=kv-cache)
+        - [SDPA / FlashAttention](https://andyshan11.github.io/ai-learning-atlas/#node=attention-kernels)
+        - [编译与连续批处理](https://andyshan11.github.io/ai-learning-atlas/#node=compile-batching)
+    - [生成模型的其他家族](https://andyshan11.github.io/ai-learning-atlas/#node=generative-families)
+      - [变分自编码器 VAE](https://andyshan11.github.io/ai-learning-atlas/#node=vae)
+      - [生成对抗网络 GAN](https://andyshan11.github.io/ai-learning-atlas/#node=gan)
+    - [提示、上下文与推理](https://andyshan11.github.io/ai-learning-atlas/#node=inference-use)
+      - [分词与聊天模板](https://andyshan11.github.io/ai-learning-atlas/#node=tokenization)
+      - [提示与上下文学习](https://andyshan11.github.io/ai-learning-atlas/#node=few-shot)
+      - [上下文选择与压缩](https://andyshan11.github.io/ai-learning-atlas/#node=context-management)
+      - [采样温度、Top-p 与解码](https://andyshan11.github.io/ai-learning-atlas/#node=decoding)
+      - [推理时计算与候选验证](https://andyshan11.github.io/ai-learning-atlas/#node=inference-budget)
   - [工程与交付](https://andyshan11.github.io/ai-learning-atlas/#node=engineering)
     - [复现与协作](https://andyshan11.github.io/ai-learning-atlas/#node=reproducibility)
       - [Git 与环境管理](https://andyshan11.github.io/ai-learning-atlas/#node=git)
@@ -226,20 +311,23 @@
     - [部署与监控](https://andyshan11.github.io/ai-learning-atlas/#node=deployment)
       - [批量预测 / 在线服务](https://andyshan11.github.io/ai-learning-atlas/#node=batch-service)
       - [数据与概念漂移](https://andyshan11.github.io/ai-learning-atlas/#node=drift)
+      - [数据契约与上线一致性](https://andyshan11.github.io/ai-learning-atlas/#node=data-contracts)
+      - [服务监控与效果反馈](https://andyshan11.github.io/ai-learning-atlas/#node=monitoring)
     - [数据规模与计算](https://andyshan11.github.io/ai-learning-atlas/#node=scale-engineering)
       - [Spark / 分布式处理](https://andyshan11.github.io/ai-learning-atlas/#node=distributed)
+      - [DDP / FSDP](https://andyshan11.github.io/ai-learning-atlas/#node=ddp-fsdp)
 
 ## 数据分析岗主线
 
-SQL 与窗口函数 → Python 与 pandas → 指标体系 → 探索性数据分析 EDA → 漏斗分析 → 留存与分群 → 抽样与置信区间 → A/B 实验 → 因果推断与混杂 → 可视化与表达
+SQL 与窗口函数 → NumPy / pandas / Polars → 数据质量与问题定义 → 指标体系 → 探索性数据分析 EDA → 事实表、维度表与粒度 → BI 与分析交付 → 抽样与置信区间 → A/B 实验 → 结论、证据与行动
 
 ## Kaggle · 预测建模主线
 
-Python 与 pandas → 探索性数据分析 EDA → 监督学习 → 验证集与交叉验证 → 数据泄漏检查 → 指标与目标对齐 → 梯度提升树 GBDT → 滞后 / 滚动 / 交互特征 → 分组误差与消融 → 超参数搜索 · Optuna → 融合 / Stacking
+数据质量与问题定义 → 验证集与交叉验证 → Pipeline 与折内预处理 → 指标与目标对齐 → 梯度提升树 GBDT → 交互、聚合与目标变换 → 分组误差与消融 → 消融与单变量对比 → OOF 折外预测 → 融合 / Stacking → 榜单、规则与提交纪律
 
 ## 生成式 AI主线
 
-Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移学习 → Embedding / 语义向量 → 生成系统评估 → RAG · 检索增强生成 → SFT · 监督微调 → 参数高效微调 → DPO · 直接偏好优化 → GRPO · 组相对策略优化
+Transformer / ViT → 预训练与迁移学习 → 提示与上下文学习 → 生成系统评估 → 检索方式 → 检索召回与忠实性 → 参数高效微调 → SFT · 监督微调 → RLHF / RLVR 反馈来源 → 轨迹评估、权限与停止条件
 
 ## 节点笔记
 
@@ -273,7 +361,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 开始取数、清洗和分析时。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从Python 与 pandas、SQL 与窗口函数、DuckDB / Polars中找到对应入口。
-- **子节点：** Python 与 pandas、SQL 与窗口函数、DuckDB / Polars、可视化与表达
+- **子节点：** Python 与 pandas、SQL 与窗口函数、DuckDB / Polars、可视化与表达、NumPy / pandas / Polars、电子表格与透视分析
 - **资料：** [Python · 官方教程](https://docs.python.org/zh-cn/3/tutorial/)
 
 ### Python 与 pandas
@@ -327,6 +415,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 组合订单、商品与用户数据。
 - **使用边界：** 先检查连接键唯一性，避免行数膨胀。
 - **例子：** 按用户汇总订单金额。
+- **依赖：** 事实表、维度表与粒度 → JOIN 与聚合
 - **资料：** [PostgreSQL · SQL 教程](https://www.postgresql.org/docs/current/tutorial-sql.html)
 
 ### 窗口函数
@@ -360,6 +449,38 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **例子：** 画各渠道的转化率及样本量。
 - **资料：** [pandas · 入门教程](https://pandas.pydata.org/docs/getting_started/intro_tutorials/)
 
+### NumPy / pandas / Polars
+
+位置：数据与 AI 知识宇宙 › 基础工具与数学 › 编程与数据工具 › NumPy / pandas / Polars
+
+- **是什么：** 用数组和数据表进行批量运算、连接与分组。
+- **什么时候用：** SQL 取数后做清洗与建模输入。
+- **使用边界：** 关注数据类型、内存和连接后的行数。
+- **例子：** 按用户聚合订单后连接用户表。
+- **资料：** [pandas · 入门教程](https://pandas.pydata.org/docs/getting_started/intro_tutorials/)
+
+### 电子表格与透视分析
+
+位置：数据与 AI 知识宇宙 › 基础工具与数学 › 编程与数据工具 › 电子表格与透视分析
+
+- **是什么：** 用公式、筛选和透视汇总检查数据。
+- **什么时候用：** 快速核对业务报表和小规模分析。
+- **使用边界：** 保留原始数据；大量手工复制难以复现。
+- **例子：** 按渠道透视收入并与 SQL 汇总对账。
+- **子节点：** Power Query
+- **资料：** [Microsoft · Power Query](https://learn.microsoft.com/en-us/power-query/power-query-what-is-power-query)
+
+### Power Query
+
+位置：数据与 AI 知识宇宙 › 基础工具与数学 › 编程与数据工具 › 电子表格与透视分析 › Power Query
+
+- **是什么：** 以可重复步骤导入、清洗与合并表格。
+- **什么时候用：** 每周需要处理相同格式的报表。
+- **使用边界：** 列名、类型与源文件结构变化会破坏刷新。
+- **例子：** 合并每个月的销售文件。
+- **可组合：** Power Query ↔ BI 与分析交付
+- **资料：** [Microsoft · Power Query](https://learn.microsoft.com/en-us/power-query/power-query-what-is-power-query)
+
 ### 数学基础
 
 位置：数据与 AI 知识宇宙 › 基础工具与数学 › 数学基础
@@ -391,6 +512,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 理解概率预测与诊断证据。
 - **使用边界：** 不要把 P(A|B) 当作 P(B|A)。
 - **例子：** 结合基准发生率解释检测结果。
+- **依赖：** Thompson Sampling → 条件概率与贝叶斯
 - **资料：** [SciPy · 统计模块](https://docs.scipy.org/doc/scipy/reference/stats.html)
 
 ### 常见概率分布
@@ -453,7 +575,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 比较群体、设计实验或评估差异。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从抽样与置信区间、Bootstrap、假设检验中找到对应入口。
-- **子节点：** 抽样与置信区间、Bootstrap、假设检验、样本量与检验功效
+- **子节点：** 抽样与置信区间、Bootstrap、假设检验、样本量与检验功效、描述统计与分布检查、效应大小与实际意义、多重检验与 FDR
 - **资料：** [SciPy · 统计模块](https://docs.scipy.org/doc/scipy/reference/stats.html)
 
 ### 抽样与置信区间
@@ -464,6 +586,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 样本推广到总体，比较实验结果。
 - **使用边界：** 忽略非随机抽样；把置信区间理解成个体范围。
 - **例子：** 给转化率差异报告区间，而非只报点估计。
+- **可组合：** 比率指标与分析单位 ↔ 抽样与置信区间
 - **依赖：** A/B 实验 → 抽样与置信区间
 - **资料：** [SciPy · 统计模块](https://docs.scipy.org/doc/scipy/reference/stats.html)
 
@@ -499,6 +622,38 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **依赖：** A/B 实验 → 样本量与检验功效
 - **资料：** [SciPy · 统计模块](https://docs.scipy.org/doc/scipy/reference/stats.html)
 
+### 描述统计与分布检查
+
+位置：数据与 AI 知识宇宙 › 基础工具与数学 › 统计基础 › 描述统计与分布检查
+
+- **是什么：** 用分位数、离散程度和分布形状理解样本。
+- **什么时候用：** 做 EDA 或解释均值变化之前。
+- **使用边界：** 均值会掩盖长尾与群体差异。
+- **例子：** 同时报告消费金额中位数与高分位。
+- **资料：** [SciPy · 统计模块](https://docs.scipy.org/doc/scipy/reference/stats.html)
+
+### 效应大小与实际意义
+
+位置：数据与 AI 知识宇宙 › 基础工具与数学 › 统计基础 › 效应大小与实际意义
+
+- **是什么：** 衡量差异到底有多大。
+- **什么时候用：** 检验显著后判断业务价值。
+- **使用边界：** 显著不等于收益足够大；同时看区间。
+- **例子：** 报告转化率提升百分点和预期新增订单。
+- **可组合：** 结论、证据与行动 ↔ 效应大小与实际意义
+- **资料：** [statsmodels · 统计检验](https://www.statsmodels.org/stable/stats.html)
+
+### 多重检验与 FDR
+
+位置：数据与 AI 知识宇宙 › 基础工具与数学 › 统计基础 › 多重检验与 FDR
+
+- **是什么：** 控制同时检验许多假设产生的误报。
+- **什么时候用：** 同时筛选大量分群或特征。
+- **使用边界：** 事后挑出最显著的分群会夸大证据。
+- **例子：** 对多渠道实验结果使用预定的校正方法。
+- **可组合：** A/B 实验 ↔ 多重检验与 FDR
+- **资料：** [statsmodels · 统计检验](https://www.statsmodels.org/stable/stats.html)
+
 ### 业务分析与因果
 
 位置：数据与 AI 知识宇宙 › 业务分析与因果
@@ -507,7 +662,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 处理业务问题时。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从描述与诊断、实验分析、因果推断与混杂中找到对应入口。
-- **子节点：** 描述与诊断、实验分析、因果推断与混杂
+- **子节点：** 描述与诊断、实验分析、因果推断与混杂、BI 与分析交付
 - **资料：** [DoWhy · 因果推断](https://www.pywhy.org/dowhy/main/)
 
 ### 描述与诊断
@@ -529,7 +684,8 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 解释收入、转化、增长或成本变化。
 - **使用边界：** 总量与比例混用；指标变化被用户构成掩盖。
 - **例子：** 收入拆为购买人数 × 人均订单数 × 客单价。
-- **子节点：** 漏斗分析、留存与分群
+- **子节点：** 漏斗分析、留存与分群、比率指标与分析单位
+- **可组合：** DAX 与筛选上下文 ↔ 指标体系
 - **资料：** [SciPy · 统计模块](https://docs.scipy.org/doc/scipy/reference/stats.html)
 
 ### 漏斗分析
@@ -552,6 +708,17 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **例子：** 比较各注册周用户的第 7 天留存。
 - **资料：** [SciPy · 统计模块](https://docs.scipy.org/doc/scipy/reference/stats.html)
 
+### 比率指标与分析单位
+
+位置：数据与 AI 知识宇宙 › 业务分析与因果 › 描述与诊断 › 指标体系 › 比率指标与分析单位
+
+- **是什么：** 区分总体分子/分母和个体比率的均值。
+- **什么时候用：** 分析客单价、人均次数或点击率。
+- **使用边界：** 两个计算口径可能不是同一个目标量。
+- **例子：** 区分总收入/总订单与用户客单价的均值。
+- **可组合：** 比率指标与分析单位 ↔ 抽样与置信区间
+- **资料：** [roadmap.sh · 数据科学路线图](https://roadmap.sh/pdfs/roadmaps/ai-data-scientist.pdf)
+
 ### 探索性数据分析 EDA
 
 位置：数据与 AI 知识宇宙 › 业务分析与因果 › 描述与诊断 › 探索性数据分析 EDA
@@ -560,6 +727,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 接触任何新数据时。
 - **使用边界：** 看过测试标签后反复改方案；把相关当因果。
 - **例子：** 按时间查看标签比例是否突变。
+- **依赖：** 数据质量与问题定义 → 探索性数据分析 EDA
 - **资料：** [pandas · 入门教程](https://pandas.pydata.org/docs/getting_started/intro_tutorials/)
 
 ### 实验分析
@@ -581,7 +749,9 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 能够控制功能、价格或页面分配时。
 - **使用边界：** 频繁偷看后随时停止；忽略样本量与分流异常。
 - **例子：** 随机分配新旧页面，预先定义转化指标与实验周期。
-- **子节点：** CUPED 方差缩减
+- **子节点：** CUPED 方差缩减、随机化与实验质量检查、固定周期与序贯检验
+- **依赖：** A/B 实验 → 随机化与实验质量检查
+- **可组合：** A/B 实验 ↔ 多重检验与 FDR
 - **依赖：** A/B 实验 → 样本量与检验功效
 - **可组合：** A/B 实验 ↔ 假设检验
 - **依赖：** A/B 实验 → 抽样与置信区间
@@ -597,6 +767,27 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **例子：** 用实验前消费金额帮助估计实验期间消费差异。
 - **资料：** [Microsoft · 实验方差缩减](https://www.microsoft.com/en-us/research/articles/deep-dive-into-variance-reduction/)
 
+### 随机化与实验质量检查
+
+位置：数据与 AI 知识宇宙 › 业务分析与因果 › 实验分析 › A/B 实验 › 随机化与实验质量检查
+
+- **是什么：** 检查分流比例、随机化单位和样本流失。
+- **什么时候用：** 解释实验效果之前。
+- **使用边界：** 实际样本比例异常应先排查，不能直接比较均值。
+- **例子：** 检查 A/B 两组用户数和关键特征平衡。
+- **依赖：** A/B 实验 → 随机化与实验质量检查
+- **资料：** [Microsoft Research · 可信实验检查](https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/patterns-of-trustworthy-experimentation-during-experiment-stage/)
+
+### 固定周期与序贯检验
+
+位置：数据与 AI 知识宇宙 › 业务分析与因果 › 实验分析 › A/B 实验 › 固定周期与序贯检验
+
+- **是什么：** 事先选择结束规则和匹配的统计方法。
+- **什么时候用：** 实验会被反复查看或提前停止。
+- **使用边界：** 反复用普通 p 值碰到显著就停会增加误报。
+- **例子：** 固定样本量跑完，或采用有错误率控制的序贯方案。
+- **资料：** [Microsoft Research · 可信实验检查](https://www.microsoft.com/en-us/research/group/experimentation-platform-exp/articles/patterns-of-trustworthy-experimentation-during-experiment-stage/)
+
 ### 因果推断与混杂
 
 位置：数据与 AI 知识宇宙 › 业务分析与因果 › 因果推断与混杂
@@ -605,7 +796,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 无法随机实验但需要估计政策或运营影响。
 - **使用边界：** 模型预测准就声称找到了因果。
 - **例子：** 画因果图，检查年龄是否同时影响曝光和购买。
-- **子节点：** 因果图 DAG、双重差分 DiD、匹配与倾向评分、工具变量 IV、断点回归 RDD
+- **子节点：** 因果图 DAG、双重差分 DiD、匹配与倾向评分、工具变量 IV、断点回归 RDD、混杂、重叠与敏感性分析
 - **依赖：** 因果推断与混杂 → 因果图 DAG
 - **资料：** [DoWhy · 因果推断](https://www.pywhy.org/dowhy/main/)
 
@@ -660,6 +851,61 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **例子：** 比较资格分数阈值附近的结果。
 - **资料：** [DoWhy · 因果推断](https://www.pywhy.org/dowhy/main/)
 
+### 混杂、重叠与敏感性分析
+
+位置：数据与 AI 知识宇宙 › 业务分析与因果 › 因果推断与混杂 › 混杂、重叠与敏感性分析
+
+- **是什么：** 检查识别假设以及结论对偏差的敏感程度。
+- **什么时候用：** 使用观测数据推断干预效果。
+- **使用边界：** 模型拟合好不能证明不存在未观测混杂。
+- **例子：** 匹配后检查协变量平衡与可比样本范围。
+- **资料：** [DoWhy · 因果推断](https://www.pywhy.org/dowhy/main/)
+
+### BI 与分析交付
+
+位置：数据与 AI 知识宇宙 › 业务分析与因果 › BI 与分析交付
+
+- **是什么：** 把口径、数据模型和结论组织成可复用报表。
+- **什么时候用：** 分析结果需要持续供业务使用。
+- **使用边界：** 漂亮图表不能替代可核对的指标口径。
+- **例子：** 交付有刷新时间与指标定义的经营看板。
+- **子节点：** 事实表、维度表与粒度、DAX 与筛选上下文、结论、证据与行动
+- **可组合：** Power Query ↔ BI 与分析交付
+- **资料：** [Microsoft · Power BI 星型模型](https://learn.microsoft.com/en-us/power-bi/guidance/star-schema)
+
+### 事实表、维度表与粒度
+
+位置：数据与 AI 知识宇宙 › 业务分析与因果 › BI 与分析交付 › 事实表、维度表与粒度
+
+- **是什么：** 事实记录事件，维度描述实体；粒度定义一行代表什么。
+- **什么时候用：** 需要多表分析或 BI 建模。
+- **使用边界：** 混合订单和订单明细粒度会重复计数。
+- **例子：** 订单明细事实表关联商品与日期维表。
+- **依赖：** 事实表、维度表与粒度 → JOIN 与聚合
+- **资料：** [Microsoft · Power BI 星型模型](https://learn.microsoft.com/en-us/power-bi/guidance/star-schema)
+
+### DAX 与筛选上下文
+
+位置：数据与 AI 知识宇宙 › 业务分析与因果 › BI 与分析交付 › DAX 与筛选上下文
+
+- **是什么：** 在 BI 模型的筛选条件下计算度量值。
+- **什么时候用：** 报表需要动态占比、同比和累计值。
+- **使用边界：** 度量值与计算列的计算时机不同。
+- **例子：** 按当前渠道筛选计算收入占比。
+- **可组合：** DAX 与筛选上下文 ↔ 指标体系
+- **资料：** [Microsoft · Power BI 星型模型](https://learn.microsoft.com/en-us/power-bi/guidance/star-schema)
+
+### 结论、证据与行动
+
+位置：数据与 AI 知识宇宙 › 业务分析与因果 › BI 与分析交付 › 结论、证据与行动
+
+- **是什么：** 将发现写成可执行建议，并交代适用范围。
+- **什么时候用：** 向业务汇报分析或实验结果。
+- **使用边界：** 相关性结论不要写成干预保证。
+- **例子：** 说明哪个渠道异常、证据是什么、下一步验证什么。
+- **可组合：** 结论、证据与行动 ↔ 效应大小与实际意义
+- **资料：** [roadmap.sh · 数据科学路线图](https://roadmap.sh/pdfs/roadmaps/ai-data-scientist.pdf)
+
 ### 学习方式
 
 位置：数据与 AI 知识宇宙 › 学习方式
@@ -668,7 +914,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 先判断你有什么反馈，再找方法。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从监督学习、无监督学习、自监督学习中找到对应入口。
-- **子节点：** 监督学习、无监督学习、自监督学习、半监督学习、强化学习、多臂老虎机
+- **子节点：** 监督学习、无监督学习、自监督学习、半监督学习、强化学习、多臂老虎机、其他学习设置（可交叉）
 - **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
 
 ### 监督学习
@@ -680,6 +926,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **使用边界：** 把不存在于预测时的字段当输入。
 - **例子：** 用历史房屋信息与成交价学习价格预测。
 - **子节点：** 分类任务、回归任务、排序与推荐
+- **可组合：** 主动学习 ↔ 监督学习
 - **适用：** 深度学习 → 监督学习
 - **适用：** TabPFN · 表格基础模型 → 监督学习
 - **适用：** SFT · 监督微调 → 监督学习
@@ -741,6 +988,9 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从点预测回归、分位数回归中找到对应入口。
 - **子节点：** 点预测回归、分位数回归
+- **适用：** 高斯过程 GP → 回归任务
+- **适用：** Poisson / Tweedie 回归 → 回归任务
+- **对照：** 生存分析与删失数据 ↔ 回归任务
 - **适用：** 梯度提升树 GBDT → 回归任务
 - **适用：** K 近邻 KNN → 回归任务
 - **资料：** [监督学习 · scikit-learn](https://scikit-learn.org/stable/supervised_learning.html)
@@ -764,6 +1014,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 不对称成本或需要预测上下界。
 - **使用边界：** 预测区间不自动具备保形覆盖保证。
 - **例子：** 预测需求的 90% 分位数准备库存。
+- **可组合：** MAE / RMSE / 分位数损失 ↔ 分位数回归
 - **对照：** 分位数回归 ↔ 保形预测 Conformal prediction
 - **资料：** [监督学习 · scikit-learn](https://scikit-learn.org/stable/supervised_learning.html)
 
@@ -775,7 +1026,20 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 搜索、推荐、广告候选排序。
 - **使用边界：** 只看整体分类准确率，不看排序指标或曝光偏差。
 - **例子：** 以用户分组验证 NDCG，比较召回与重排。
+- **子节点：** Pointwise / Pairwise / Listwise
+- **可组合：** 推荐与协同过滤 ↔ 排序与推荐
+- **适用：** Recall@k / MRR / NDCG → 排序与推荐
 - **可组合：** 排序与推荐 ↔ XGBoost
+- **资料：** [XGBoost · 文档](https://xgboost.readthedocs.io/en/stable/)
+
+### Pointwise / Pairwise / Listwise
+
+位置：数据与 AI 知识宇宙 › 学习方式 › 监督学习 › 排序与推荐 › Pointwise / Pairwise / Listwise
+
+- **是什么：** 分别按单项、成对偏好或整列表优化排序。
+- **什么时候用：** 搜索和推荐关注前几名的相关性。
+- **使用边界：** 按查询或用户分组验证，不能随意拆散列表。
+- **例子：** 用 LambdaMART 对每个查询的候选项排序。
 - **资料：** [XGBoost · 文档](https://xgboost.readthedocs.io/en/stable/)
 
 ### 无监督学习
@@ -793,13 +1057,13 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 
 位置：数据与 AI 知识宇宙 › 学习方式 › 无监督学习 › 聚类
 
-- **是什么：** 按距离或密度寻找群体结构。
-- **什么时候用：** 探索用户分群或空间聚集。
-- **使用边界：** 尺度与距离选择会影响结果；簇编号没有自然顺序。
-- **例子：** 先标准化，再解释各簇的行为差异。
+- **是什么：** 按距离、密度、层次或概率结构发现群体。
+- **什么时候用：** 没有目标标签，希望发现可解释的群体结构。
+- **使用边界：** 不同算法的簇假设不同；簇不自动等于真实业务类别。
+- **例子：** 比较 K-means、DBSCAN 与层次聚类，再检查群体差异。
 - **子节点：** K-means、DBSCAN / HDBSCAN、层次聚类
 - **适用：** 高斯混合模型 GMM → 聚类
-- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
+- **资料：** [无监督学习 · scikit-learn](https://scikit-learn.org/stable/unsupervised_learning.html)
 
 ### K-means
 
@@ -836,12 +1100,13 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 
 位置：数据与 AI 知识宇宙 › 学习方式 › 无监督学习 › 降维与表示压缩
 
-- **是什么：** 将高维数据映射到低维；PCA 线性，UMAP 非线性。
-- **什么时候用：** 压缩、可视化和探索结构。
-- **使用边界：** 二维图上的分离不等于可泛化分类效果。
-- **例子：** PCA 压缩相关数值特征，再交叉验证。
-- **子节点：** PCA 线性降维、UMAP / t-SNE
-- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
+- **是什么：** 用更低维表示保留部分信息，服务压缩、建模或探索。
+- **什么时候用：** 高维特征需要压缩或可视化。
+- **使用边界：** PCA、NMF 和可视化降维目标不同；低维图不能直接证明簇结构。
+- **例子：** 建模比较 PCA；探索嵌入时比较 UMAP 与 t-SNE。
+- **子节点：** PCA 线性降维、UMAP / t-SNE、NMF 非负矩阵分解、t-SNE
+- **适用：** 自编码器 AE → 降维与表示压缩
+- **资料：** [无监督学习 · scikit-learn](https://scikit-learn.org/stable/unsupervised_learning.html)
 
 ### PCA 线性降维
 
@@ -863,6 +1128,26 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **使用边界：** 二维图距离不能简单代表全部原空间关系。
 - **例子：** 观察文本嵌入的邻域分布。
 - **资料：** [UMAP · 官方文档](https://umap-learn.readthedocs.io/en/latest/)
+
+### NMF 非负矩阵分解
+
+位置：数据与 AI 知识宇宙 › 学习方式 › 无监督学习 › 降维与表示压缩 › NMF 非负矩阵分解
+
+- **是什么：** 用非负成分组合近似原矩阵。
+- **什么时候用：** 非负计数或主题表示。
+- **使用边界：** 需要非负输入；成分解释仍须检查。
+- **例子：** 把文档词频分解为若干主题成分。
+- **资料：** [无监督学习 · scikit-learn](https://scikit-learn.org/stable/unsupervised_learning.html)
+
+### t-SNE
+
+位置：数据与 AI 知识宇宙 › 学习方式 › 无监督学习 › 降维与表示压缩 › t-SNE
+
+- **是什么：** 侧重保留局部邻近关系的可视化方法。
+- **什么时候用：** 探索高维嵌入的局部群体。
+- **使用边界：** 图上的簇间距离、大小不直接等于原空间关系。
+- **例子：** 查看文本嵌入中的局部混杂样本。
+- **资料：** [无监督学习 · scikit-learn](https://scikit-learn.org/stable/unsupervised_learning.html)
 
 ### 密度估计
 
@@ -904,7 +1189,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 标签很少的异常筛查。
 - **使用边界：** 异常不一定是欺诈；需要人工或业务核验。
 - **例子：** 用 Isolation Forest 找出交易异常候选。
-- **子节点：** Isolation Forest
+- **子节点：** Isolation Forest、LOF 局部异常因子
 - **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
 
 ### Isolation Forest
@@ -915,6 +1200,16 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 较少标签的数值异常筛查。
 - **使用边界：** 异常分数不等于欺诈概率。
 - **例子：** 挑出需要人工核查的交易。
+- **资料：** [无监督学习 · scikit-learn](https://scikit-learn.org/stable/unsupervised_learning.html)
+
+### LOF 局部异常因子
+
+位置：数据与 AI 知识宇宙 › 学习方式 › 无监督学习 › 异常检测 › LOF 局部异常因子
+
+- **是什么：** 比较样本与邻域的局部密度。
+- **什么时候用：** 异常取决于所在局部群体。
+- **使用边界：** 检测训练集异常与预测新样本需要不同设置。
+- **例子：** 识别某消费群体内部的异常交易。
 - **资料：** [无监督学习 · scikit-learn](https://scikit-learn.org/stable/unsupervised_learning.html)
 
 ### 自监督学习
@@ -1012,6 +1307,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **使用边界：** 普通固定数据预测题通常不需要 RL。无模型 / 模型式按是否使用环境模型区分；离线 / 在线按数据获取方式区分，这两种维度可以交叉。
 - **例子：** 库存决策影响后续缺货与成本，在模拟器中训练。
 - **子节点：** 无模型强化学习、世界模型 / 模型式 RL、离线 RL · CQL / IQL
+- **对照：** 在线 / 增量学习 ↔ 强化学习
 - **适用：** 深度学习 → 强化学习
 - **依赖：** 强化学习 → 概率与分布
 - **适用：** GRPO · 组相对策略优化 → 强化学习
@@ -1049,6 +1345,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **使用边界：** 高维图像状态无法靠枚举表格解决。
 - **例子：** 在小网格世界中比较探索策略。
 - **子节点：** 表格 Q-learning、SARSA
+- **可组合：** Dyna：真实经验与模拟经验 ↔ 表格价值学习
 - **资料：** [Sutton & Barto · 强化学习教材](http://incompleteideas.net/book/the-book-2nd.html)
 
 ### 表格 Q-learning
@@ -1121,6 +1418,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 可持续采集新交互；离散或连续动作任务。
 - **使用边界：** 交互昂贵时，样本效率可能成为瓶颈。
 - **例子：** 在并行模拟环境中训练控制策略。
+- **可组合：** RLHF / RLVR 反馈来源 ↔ PPO
 - **对照：** PPO ↔ GRPO · 组相对策略优化
 - **资料：** [Stable-Baselines3 · RL 选择与实践](https://stable-baselines3.readthedocs.io/en/master/guide/rl_tips.html)
 
@@ -1163,6 +1461,28 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 有模型可用或交互成本高。
 - **使用边界：** 模型误差会在多步规划中累积。
 - **例子：** 在学到的动力学中比较候选动作序列。
+- **子节点：** Dyna：真实经验与模拟经验、基于模型的规划
+- **资料：** [RL 算法分类 · Spinning Up](https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html)
+
+### Dyna：真实经验与模拟经验
+
+位置：数据与 AI 知识宇宙 › 学习方式 › 强化学习 › 世界模型 / 模型式 RL › Dyna：真实经验与模拟经验
+
+- **是什么：** 用学到的环境模型生成经验，辅助价值更新。
+- **什么时候用：** 理解模型学习如何与规划结合。
+- **使用边界：** 模型误差会传入策略；规划次数不是越多越好。
+- **例子：** 用真实转移更新模型，再用模拟转移更新 Q 值。
+- **可组合：** Dyna：真实经验与模拟经验 ↔ 表格价值学习
+- **资料：** [Sutton & Barto · 强化学习教材](http://incompleteideas.net/book/the-book-2nd.html)
+
+### 基于模型的规划
+
+位置：数据与 AI 知识宇宙 › 学习方式 › 强化学习 › 世界模型 / 模型式 RL › 基于模型的规划
+
+- **是什么：** 使用已知或学到的环境模型比较未来动作序列。
+- **什么时候用：** 动作有长期后果，且有可用的预测模型。
+- **使用边界：** 模型失准会产生看似高回报的错误计划。
+- **例子：** 对若干候选动作模拟未来并重新规划。
 - **资料：** [RL 算法分类 · Spinning Up](https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html)
 
 ### 离线 RL · CQL / IQL
@@ -1204,7 +1524,74 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 推荐或实验分配只需优化即时反馈。
 - **使用边界：** 动作有强长期影响时不能简单当老虎机。
 - **例子：** 在候选展示方案中分配流量。
+- **子节点：** UCB 上置信界、Thompson Sampling
 - **资料：** [Sutton & Barto · 强化学习教材](http://incompleteideas.net/book/the-book-2nd.html)
+
+### UCB 上置信界
+
+位置：数据与 AI 知识宇宙 › 学习方式 › 多臂老虎机 › UCB 上置信界
+
+- **是什么：** 按估计回报与不确定性奖励选择动作。
+- **什么时候用：** 无长期状态影响的探索与利用问题。
+- **使用边界：** 基本形式的平稳假设不一定适合变化环境。
+- **例子：** 在简单推荐实验中给尝试较少的选项探索机会。
+- **资料：** [Sutton & Barto · 强化学习教材](http://incompleteideas.net/book/the-book-2nd.html)
+
+### Thompson Sampling
+
+位置：数据与 AI 知识宇宙 › 学习方式 › 多臂老虎机 › Thompson Sampling
+
+- **是什么：** 从回报的后验分布采样，再选择动作。
+- **什么时候用：** 能构造合理概率模型的老虎机问题。
+- **使用边界：** 先验和非平稳变化会影响决策。
+- **例子：** 用 Beta-Bernoulli 模型选择二元回报选项。
+- **依赖：** Thompson Sampling → 条件概率与贝叶斯
+- **资料：** [Sutton & Barto · 强化学习教材](http://incompleteideas.net/book/the-book-2nd.html)
+
+### 其他学习设置（可交叉）
+
+位置：数据与 AI 知识宇宙 › 学习方式 › 其他学习设置（可交叉）
+
+- **是什么：** 按标注预算、数据到达和任务迁移组织问题。
+- **什么时候用：** 反馈来源之外还有资源与环境约束。
+- **使用边界：** 这些设置能与监督或自监督组合，不是互斥新门类。
+- **例子：** 用迁移学习初始化一个主动标注分类器。
+- **子节点：** 主动学习、在线 / 增量学习、迁移学习与域适配
+- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
+
+### 主动学习
+
+位置：数据与 AI 知识宇宙 › 学习方式 › 其他学习设置（可交叉） › 主动学习
+
+- **是什么：** 让模型选择最值得人工标注的样本。
+- **什么时候用：** 标签昂贵且可以追加标注。
+- **使用边界：** 只挑不确定样本可能集中在噪声；保持代表性。
+- **例子：** 优先复核模型最不确定且多样的工单。
+- **可组合：** 主动学习 ↔ 监督学习
+- **资料：** [modAL · 主动学习](https://modal-python.readthedocs.io/en/latest/)
+
+### 在线 / 增量学习
+
+位置：数据与 AI 知识宇宙 › 学习方式 › 其他学习设置（可交叉） › 在线 / 增量学习
+
+- **是什么：** 数据逐批到来时持续更新模型。
+- **什么时候用：** 流式数据或无法一次装入内存。
+- **使用边界：** 在线学习不等于强化学习；仍可使用真实标签。
+- **例子：** 用新到达的带标签记录更新 SGD 分类器。
+- **对照：** 在线 / 增量学习 ↔ 强化学习
+- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
+
+### 迁移学习与域适配
+
+位置：数据与 AI 知识宇宙 › 学习方式 › 其他学习设置（可交叉） › 迁移学习与域适配
+
+- **是什么：** 复用已有表示并适应新任务或数据分布。
+- **什么时候用：** 新任务标注少且存在相关预训练模型。
+- **使用边界：** 源域不匹配可能负迁移；用目标域验证。
+- **例子：** 将预训练视觉编码器适配到商品分类。
+- **可组合：** 迁移学习与域适配 ↔ 预训练与迁移学习
+- **可组合：** 迁移学习与域适配 ↔ LoRA 低秩适配
+- **资料：** [Hugging Face · Transformers](https://huggingface.co/docs/transformers/index)
 
 ### 模型与任务
 
@@ -1214,7 +1601,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 同一任务往往有多个候选家族。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从经典模型家族、深度学习、时间序列 · 统计与机器学习中找到对应入口。
-- **子节点：** 经典模型家族、深度学习、时间序列 · 统计与机器学习、TabPFN · 表格基础模型
+- **子节点：** 经典模型家族、深度学习、时间序列 · 统计与机器学习、TabPFN · 表格基础模型、专门任务与模型入口
 - **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
 
 ### 经典模型家族
@@ -1236,7 +1623,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 低成本、稀疏或可解释基线。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从线性回归与正则化、逻辑回归中找到对应入口。
-- **子节点：** 线性回归与正则化、逻辑回归
+- **子节点：** 线性回归与正则化、逻辑回归、Poisson / Tweedie 回归
 - **资料：** [监督学习 · scikit-learn](https://scikit-learn.org/stable/supervised_learning.html)
 
 ### 线性回归与正则化
@@ -1283,6 +1670,17 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **适用：** 逻辑回归 → 多分类
 - **资料：** [scikit-learn · 算法选择图](https://scikit-learn.org/stable/machine_learning_map.html)
 
+### Poisson / Tweedie 回归
+
+位置：数据与 AI 知识宇宙 › 模型与任务 › 经典模型家族 › 线性与广义线性 › Poisson / Tweedie 回归
+
+- **是什么：** 用适合计数或特定非负分布的目标建模。
+- **什么时候用：** 目标分布不适合普通平方误差假设。
+- **使用边界：** 先检查分布假设、零值结构与暴露量。
+- **例子：** 以观察时长为暴露量预测事件次数。
+- **适用：** Poisson / Tweedie 回归 → 回归任务
+- **资料：** [监督学习 · scikit-learn](https://scikit-learn.org/stable/supervised_learning.html)
+
 ### 树与提升模型
 
 位置：数据与 AI 知识宇宙 › 模型与任务 › 经典模型家族 › 树与提升模型
@@ -1323,6 +1721,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **使用边界：** 验证泄漏再强的算法也救不了。
 - **例子：** 比较 LightGBM、XGBoost、CatBoost。
 - **子节点：** LightGBM、XGBoost、CatBoost
+- **可组合：** 交互、聚合与目标变换 ↔ 梯度提升树 GBDT
 - **适用：** 梯度提升树 GBDT → 分类任务
 - **适用：** 梯度提升树 GBDT → 回归任务
 - **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
@@ -1367,7 +1766,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 模型假设适合特征结构时。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从SVM / 核方法、K 近邻 KNN、朴素贝叶斯中找到对应入口。
-- **子节点：** SVM / 核方法、K 近邻 KNN、朴素贝叶斯
+- **子节点：** SVM / 核方法、K 近邻 KNN、朴素贝叶斯、高斯过程 GP
 - **资料：** [监督学习 · scikit-learn](https://scikit-learn.org/stable/supervised_learning.html)
 
 ### SVM / 核方法
@@ -1404,6 +1803,17 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **适用：** 朴素贝叶斯 → 分类任务
 - **资料：** [监督学习 · scikit-learn](https://scikit-learn.org/stable/supervised_learning.html)
 
+### 高斯过程 GP
+
+位置：数据与 AI 知识宇宙 › 模型与任务 › 经典模型家族 › 邻近、核与概率模型 › 高斯过程 GP
+
+- **是什么：** 以函数分布建模预测和不确定性。
+- **什么时候用：** 样本较少且核假设合适。
+- **使用边界：** 标准精确方法随样本数增大计算昂贵。
+- **例子：** 为昂贵实验拟合代理模型。
+- **适用：** 高斯过程 GP → 回归任务
+- **资料：** [监督学习 · scikit-learn](https://scikit-learn.org/stable/supervised_learning.html)
+
 ### 深度学习
 
 位置：数据与 AI 知识宇宙 › 模型与任务 › 深度学习
@@ -1412,7 +1822,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 图像、文本、音频或复杂表示任务。
 - **使用边界：** 它可用于监督、自监督和强化学习，不与它们互斥。
 - **例子：** CNN 做监督分类；DQN 用网络学动作价值。
-- **子节点：** MLP · 多层感知机、CNN · 卷积网络、Transformer / ViT、循环网络 RNN、图神经网络 GNN
+- **子节点：** MLP · 多层感知机、CNN · 卷积网络、Transformer / ViT、循环网络 RNN、图神经网络 GNN、自编码器 AE、状态空间模型 · Mamba、稀疏混合专家 MoE、BatchNorm / LayerNorm / RMSNorm
 - **适用：** 深度学习 → 监督学习
 - **适用：** 深度学习 → 自监督学习
 - **适用：** 深度学习 → 强化学习
@@ -1438,6 +1848,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **使用边界：** 不要默认从零训练优于预训练。
 - **例子：** 微调预训练 ResNet 做图像分类。
 - **子节点：** ResNet · 残差网络、U-Net · 编解码与跳连
+- **可组合：** MixUp / CutMix ↔ CNN · 卷积网络
 - **适用：** CNN · 卷积网络 → 分类任务
 - **可组合：** CNN · 卷积网络 ↔ 余弦退火
 - **可组合：** CNN · 卷积网络 ↔ 数据增强 / Mixup / CutMix
@@ -1461,6 +1872,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 像素级分割或生成模型中的网络组件。
 - **使用边界：** 分类任务未必需要输出密集像素图。
 - **例子：** 进行图像分割。
+- **适用：** U-Net · 编解码与跳连 → 检测与分割
 - **可组合：** U-Net · 编解码与跳连 ↔ 数据增强 / Mixup / CutMix
 - **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
 
@@ -1472,7 +1884,10 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 文本、视觉、跨模态任务。
 - **使用边界：** 显存、输入长度和数据规模需要匹配。
 - **例子：** 微调文本编码器，或用 ViT 处理图像。
-- **子节点：** 编码器 · BERT 类、解码器 · GPT 类、编码器—解码器 · T5 类、ViT · 视觉 Transformer
+- **子节点：** 编码器 · BERT 类、解码器 · GPT 类、编码器—解码器 · T5 类、ViT · 视觉 Transformer、注意力与位置表示
+- **对照：** 状态空间模型 · Mamba ↔ Transformer / ViT
+- **可组合：** 稀疏混合专家 MoE ↔ Transformer / ViT
+- **可组合：** SDPA / FlashAttention ↔ Transformer / ViT
 - **可组合：** Transformer / ViT ↔ 掩码预测
 - **可组合：** Transformer / ViT ↔ 学习率预热 Warmup
 - **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
@@ -1517,6 +1932,17 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **使用边界：** 小数据优先比较预训练微调。
 - **例子：** 对图像块序列进行分类。
 - **资料：** [Hugging Face · Transformers](https://huggingface.co/docs/transformers/index)
+
+### 注意力与位置表示
+
+位置：数据与 AI 知识宇宙 › 模型与任务 › 深度学习 › Transformer / ViT › 注意力与位置表示
+
+- **是什么：** 按内容聚合序列信息，并编码位置关系。
+- **什么时候用：** 理解 Transformer、上下文与注意力掩码。
+- **使用边界：** 因果掩码和位置方式影响可见信息与长度泛化。
+- **例子：** 自回归解码时禁止读取未来 token。
+- **可组合：** 注意力与位置表示 ↔ KV Cache
+- **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
 
 ### 循环网络 RNN
 
@@ -1600,6 +2026,50 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **例子：** 用局部邻居样本学习用户节点表示。
 - **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
 
+### 自编码器 AE
+
+位置：数据与 AI 知识宇宙 › 模型与任务 › 深度学习 › 自编码器 AE
+
+- **是什么：** 通过重构输入学习压缩表示。
+- **什么时候用：** 需要非线性表示或去噪候选。
+- **使用边界：** 重构误差低不保证下游预测好，也不保证异常检测有效。
+- **例子：** 用去噪重构预训练表示，再做独立验证。
+- **对照：** 变分自编码器 VAE ↔ 自编码器 AE
+- **适用：** 自编码器 AE → 降维与表示压缩
+- **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
+
+### 状态空间模型 · Mamba
+
+位置：数据与 AI 知识宇宙 › 模型与任务 › 深度学习 › 状态空间模型 · Mamba
+
+- **是什么：** 用选择性状态更新处理序列。
+- **什么时候用：** 研究长序列架构及其计算特性。
+- **使用边界：** 不是 Transformer 的无条件替代；依任务与硬件比较。
+- **例子：** 比较状态空间与注意力模型的延迟和质量。
+- **对照：** 状态空间模型 · Mamba ↔ Transformer / ViT
+- **资料：** [Mamba · 官方实现](https://github.com/state-spaces/mamba)
+
+### 稀疏混合专家 MoE
+
+位置：数据与 AI 知识宇宙 › 模型与任务 › 深度学习 › 稀疏混合专家 MoE
+
+- **是什么：** 路由器为输入选择部分专家计算。
+- **什么时候用：** 需要扩大模型容量且能处理训练与服务复杂度。
+- **使用边界：** 激活参数少不等于总显存少；还要考虑通信。
+- **例子：** 比较稠密模型与稀疏专家模型的实际服务成本。
+- **可组合：** 稀疏混合专家 MoE ↔ Transformer / ViT
+- **资料：** [Switch Transformers · 原论文](https://arxiv.org/abs/2101.03961)
+
+### BatchNorm / LayerNorm / RMSNorm
+
+位置：数据与 AI 知识宇宙 › 模型与任务 › 深度学习 › BatchNorm / LayerNorm / RMSNorm
+
+- **是什么：** 调整中间表示的尺度以帮助训练。
+- **什么时候用：** 阅读网络结构或排查训练不稳定。
+- **使用边界：** 归一化维度与训练/推理行为各不相同。
+- **例子：** 对比小批量 CNN 的归一化选择。
+- **资料：** [Hugging Face · Transformers](https://huggingface.co/docs/transformers/index)
+
 ### 时间序列 · 统计与机器学习
 
 位置：数据与 AI 知识宇宙 › 模型与任务 › 时间序列 · 统计与机器学习
@@ -1608,7 +2078,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 销量、流量、需求预测。
 - **使用边界：** 随机切分穿越未来；忽视多步预测时特征是否可用。
 - **例子：** 先与上周同期比较，再试滞后特征 + GBDT。
-- **子节点：** 朴素 / 季节基线、ARIMA / SARIMA、指数平滑 ETS
+- **子节点：** 朴素 / 季节基线、ARIMA / SARIMA、指数平滑 ETS、时间序列基础模型 · Chronos
 - **可组合：** 时间序列 · 统计与机器学习 ↔ 滞后 / 滚动 / 交互特征
 - **资料：** [statsmodels · 时间序列](https://www.statsmodels.org/stable/tsa.html)
 
@@ -1642,16 +2112,71 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **例子：** 比较不同季节平滑方案。
 - **资料：** [statsmodels · 时间序列](https://www.statsmodels.org/stable/tsa.html)
 
+### 时间序列基础模型 · Chronos
+
+位置：数据与 AI 知识宇宙 › 模型与任务 › 时间序列 · 统计与机器学习 › 时间序列基础模型 · Chronos
+
+- **是什么：** 用预训练序列模型直接预测或适配新数据。
+- **什么时候用：** 多条序列需要低成本的预训练基线。
+- **使用边界：** 按时间回测；协变量、频率、许可随具体版本核查。
+- **例子：** 将 Chronos 与季节朴素和树模型在相同窗口比较。
+- **依赖：** 时间序列基础模型 · Chronos → 时间切分与回测
+- **资料：** [Amazon Science · Chronos](https://github.com/amazon-science/chronos-forecasting)
+
 ### TabPFN · 表格基础模型
 
 位置：数据与 AI 知识宇宙 › 模型与任务 › TabPFN · 表格基础模型
 
 - **是什么：** 利用预训练模型对表格任务进行预测。
 - **什么时候用：** 适配其支持范围的表格数据，可作为比较候选。
-- **使用边界：** 检查当前版本规模限制、许可、算力与比赛外部数据规则。
+- **使用边界：** 模型家族持续更新；权重许可、输入规模与硬件约束按官方具体版本核查。比赛另查预训练与外部数据规则。不能把某个版本的限制推广到整个家族。
 - **例子：** 在同一验证集上与 GBDT 比较时间和分数。
 - **适用：** TabPFN · 表格基础模型 → 监督学习
 - **资料：** [Prior Labs · TabPFN](https://github.com/PriorLabs/TabPFN)
+
+### 专门任务与模型入口
+
+位置：数据与 AI 知识宇宙 › 模型与任务 › 专门任务与模型入口
+
+- **是什么：** 部分任务有特殊输出结构和评估方式。
+- **什么时候用：** 分类回归不足以描述问题。
+- **使用边界：** 先定义标签和指标，再找对应模型。
+- **例子：** 把事件发生时间与是否已发生一起建模。
+- **子节点：** 生存分析与删失数据、推荐与协同过滤、检测与分割
+- **资料：** [scikit-survival · 用户指南](https://scikit-survival.readthedocs.io/en/stable/user_guide/index.html)
+
+### 生存分析与删失数据
+
+位置：数据与 AI 知识宇宙 › 模型与任务 › 专门任务与模型入口 › 生存分析与删失数据
+
+- **是什么：** 预测事件发生时间，同时处理尚未观察到事件的样本。
+- **什么时候用：** 流失、设备寿命等只有部分完整时长。
+- **使用边界：** 不能把未发生事件的观察截止日当作真实事件日。
+- **例子：** 比较 Cox 模型和生存森林。
+- **对照：** 生存分析与删失数据 ↔ 回归任务
+- **资料：** [scikit-survival · 用户指南](https://scikit-survival.readthedocs.io/en/stable/user_guide/index.html)
+
+### 推荐与协同过滤
+
+位置：数据与 AI 知识宇宙 › 模型与任务 › 专门任务与模型入口 › 推荐与协同过滤
+
+- **是什么：** 利用用户物品交互或内容匹配候选。
+- **什么时候用：** 需要个性化推荐和排序。
+- **使用边界：** 曝光偏差、冷启动与负样本选择会影响评估。
+- **例子：** 矩阵分解召回候选后使用排序模型。
+- **可组合：** 推荐与协同过滤 ↔ 排序与推荐
+- **资料：** [动手学深度学习 · 推荐系统](https://d2l.ai/chapter_recommender-systems/index.html)
+
+### 检测与分割
+
+位置：数据与 AI 知识宇宙 › 模型与任务 › 专门任务与模型入口 › 检测与分割
+
+- **是什么：** 分别输出目标位置或逐像素标签。
+- **什么时候用：** 图片分类不能提供所需定位信息。
+- **使用边界：** 评价框或掩码质量，不能只看类别准确率。
+- **例子：** 用检测框计数商品，用 U-Net 分割区域。
+- **适用：** U-Net · 编解码与跳连 → 检测与分割
+- **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
 
 ### 验证与特征
 
@@ -1661,7 +2186,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 所有建模方案都依赖这一流程。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从验证集与交叉验证、特征工程、评估与实验迭代中找到对应入口。
-- **子节点：** 验证集与交叉验证、特征工程、评估与实验迭代
+- **子节点：** 验证集与交叉验证、特征工程、评估与实验迭代、数据质量与问题定义、类别不平衡处理
 - **资料：** [scikit-learn · 交叉验证](https://scikit-learn.org/stable/modules/cross_validation.html)
 
 ### 验证集与交叉验证
@@ -1672,7 +2197,8 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 任何模型比较、调参和融合之前。
 - **使用边界：** 反复窥探最终测试集；预处理在全量数据上拟合。
 - **例子：** 同一组折比较所有方案，保留最终测试集。
-- **子节点：** 随机 / 分层切分、按用户 / 实体分组切分、时间切分与回测、数据泄漏检查
+- **子节点：** 随机 / 分层切分、按用户 / 实体分组切分、时间切分与回测、数据泄漏检查、分层交叉验证、嵌套交叉验证、OOF 折外预测、Pipeline 与折内预处理
+- **依赖：** 榜单、规则与提交纪律 → 验证集与交叉验证
 - **依赖：** Stacking · 二层融合 → 验证集与交叉验证
 - **依赖：** 温度缩放 Temperature scaling → 验证集与交叉验证
 - **依赖：** 保形预测 Conformal prediction → 验证集与交叉验证
@@ -1706,6 +2232,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 未来销量、金融序列、业务预测。
 - **使用边界：** 只移动窗口却让滚动特征看到未来。
 - **例子：** 滚动多段回测，模拟真实预测跨度。
+- **依赖：** 时间序列基础模型 · Chronos → 时间切分与回测
 - **依赖：** 滞后 / 滚动 / 交互特征 → 时间切分与回测
 - **资料：** [scikit-learn · 交叉验证](https://scikit-learn.org/stable/modules/cross_validation.html)
 
@@ -1717,7 +2244,53 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 异常高分、本地与榜单差异很大。
 - **使用边界：** 把 ID、事后状态或全量统计当作无害特征。
 - **例子：** 检查退款时间是否发生在待预测购买之后。
+- **可组合：** Pipeline 与折内预处理 ↔ 数据泄漏检查
 - **资料：** [scikit-learn · 交叉验证](https://scikit-learn.org/stable/modules/cross_validation.html)
+
+### 分层交叉验证
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 验证集与交叉验证 › 分层交叉验证
+
+- **是什么：** 尽量让各折类别比例接近。
+- **什么时候用：** 独立同分布分类数据且类别较少。
+- **使用边界：** 分层不能替代按用户分组或按时间划分。
+- **例子：** 在不跨用户泄漏的前提下保留类别比例。
+- **资料：** [scikit-learn · 交叉验证](https://scikit-learn.org/stable/modules/cross_validation.html)
+
+### 嵌套交叉验证
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 验证集与交叉验证 › 嵌套交叉验证
+
+- **是什么：** 内层选参数，外层估计整个选择流程的效果。
+- **什么时候用：** 频繁调参且需要较少选择偏差的估计。
+- **使用边界：** 成本更高；最终测试集仍需独立。
+- **例子：** 内层搜索参数后仅在外层留出折评分。
+- **资料：** [scikit-learn · 交叉验证](https://scikit-learn.org/stable/modules/cross_validation.html)
+
+### OOF 折外预测
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 验证集与交叉验证 › OOF 折外预测
+
+- **是什么：** 每条训练记录由没有训练过它的折模型预测。
+- **什么时候用：** 融合、校准和分析样本错误。
+- **使用边界：** 预处理也必须在折内拟合；OOF 不是万能防泄漏。
+- **例子：** 用一组折外概率训练第二层融合模型。
+- **可组合：** OOF 折外预测 ↔ Stacking · 二层融合
+- **可组合：** OOF 折外预测 ↔ 加权平均与 Blending
+- **资料：** [scikit-learn · 交叉验证](https://scikit-learn.org/stable/modules/cross_validation.html)
+
+### Pipeline 与折内预处理
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 验证集与交叉验证 › Pipeline 与折内预处理
+
+- **是什么：** 把预处理和模型绑定到同一次训练划分。
+- **什么时候用：** 插补、缩放、特征选择和调参组合时。
+- **使用边界：** 先在全数据拟合变换再交叉验证会泄漏。
+- **例子：** 在每折训练集拟合插补器和分类器。
+- **可组合：** Pipeline 与折内预处理 ↔ 数据泄漏检查
+- **依赖：** 过采样、欠采样与 SMOTE → Pipeline 与折内预处理
+- **可组合：** 数据契约与上线一致性 ↔ Pipeline 与折内预处理
+- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
 
 ### 特征工程
 
@@ -1727,7 +2300,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 想提高有效信号而不是只换模型时。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从缺失值与异常值、特征编码、缩放与标准化中找到对应入口。
-- **子节点：** 缺失值与异常值、特征编码、缩放与标准化、滞后 / 滚动 / 交互特征、过滤 / 包装 / 嵌入式选择
+- **子节点：** 缺失值与异常值、特征编码、缩放与标准化、滞后 / 滚动 / 交互特征、过滤 / 包装 / 嵌入式选择、交互、聚合与目标变换
 - **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
 
 ### 缺失值与异常值
@@ -1749,6 +2322,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 模型无法直接处理缺失。
 - **使用边界：** 填补参数不能从测试数据学习。
 - **例子：** 训练折中位数填补年龄。
+- **可组合：** MCAR / MAR / MNAR ↔ 均值 / 中位数 / 模型填补
 - **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
 
 ### 特征编码
@@ -1827,6 +2401,17 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **例子：** 比较移除无效特征后的验证表现。
 - **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
 
+### 交互、聚合与目标变换
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 特征工程 › 交互、聚合与目标变换
+
+- **是什么：** 把领域机制表达为比率、分组统计或目标尺度。
+- **什么时候用：** 原始字段没有直接表达重要关系。
+- **使用边界：** 统计不能读到未来或验证标签；反变换可能有偏。
+- **例子：** 用购买频率与客单价表达消费习惯。
+- **可组合：** 交互、聚合与目标变换 ↔ 梯度提升树 GBDT
+- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
+
 ### 评估与实验迭代
 
 位置：数据与 AI 知识宇宙 › 验证与特征 › 评估与实验迭代
@@ -1835,7 +2420,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 有可靠验证后寻找改进。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从指标与目标对齐、分组误差与消融、SHAP / 特征重要性中找到对应入口。
-- **子节点：** 指标与目标对齐、分组误差与消融、SHAP / 特征重要性、超参数搜索 · Optuna
+- **子节点：** 指标与目标对齐、分组误差与消融、SHAP / 特征重要性、超参数搜索 · Optuna、分布偏移与对抗验证、消融与单变量对比、榜单、规则与提交纪律
 - **资料：** [scikit-learn · 交叉验证](https://scikit-learn.org/stable/modules/cross_validation.html)
 
 ### 指标与目标对齐
@@ -1846,7 +2431,41 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 决定训练、调参和提交方案时。
 - **使用边界：** 用准确率掩盖类别不平衡；不同指标不可直接比较。
 - **例子：** F1 比赛选阈值，LogLoss 比赛关注概率质量。
+- **子节点：** 分类：Precision / Recall / F1、ROC-AUC / PR-AUC / Log Loss、MAE / RMSE / 分位数损失
 - **对照：** 指标与目标对齐 ↔ 交叉熵损失
+- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
+
+### 分类：Precision / Recall / F1
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 评估与实验迭代 › 指标与目标对齐 › 分类：Precision / Recall / F1
+
+- **是什么：** 分别关注预测为正的可信度、正类覆盖和两者折中。
+- **什么时候用：** 错判与漏判重要程度不同。
+- **使用边界：** 明确正类与平均方式；F1 不直接反映所有业务成本。
+- **例子：** 在固定误报预算下报告召回率。
+- **可组合：** 分类：Precision / Recall / F1 ↔ 分类阈值调整
+- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
+
+### ROC-AUC / PR-AUC / Log Loss
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 评估与实验迭代 › 指标与目标对齐 › ROC-AUC / PR-AUC / Log Loss
+
+- **是什么：** AUC 看排序，Log Loss 看概率预测。
+- **什么时候用：** 比较分类器排名能力或概率质量。
+- **使用边界：** PR-AUC 的定义与实现需一致；少数类问题不只看 ROC-AUC。
+- **例子：** 同一验证集同时检查排序分数和概率损失。
+- **可组合：** ROC-AUC / PR-AUC / Log Loss ↔ 概率校准
+- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
+
+### MAE / RMSE / 分位数损失
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 评估与实验迭代 › 指标与目标对齐 › MAE / RMSE / 分位数损失
+
+- **是什么：** 分别表达绝对误差、大误差惩罚和分位数目标。
+- **什么时候用：** 回归预测需要明确业务误差代价。
+- **使用边界：** 先统一目标尺度；零值和近零值会影响百分比误差。
+- **例子：** 对需求预测比较平均误差与缺货相关分位数。
+- **可组合：** MAE / RMSE / 分位数损失 ↔ 分位数回归
 - **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
 
 ### 分组误差与消融
@@ -1877,7 +2496,98 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 验证可信、基础方案稳定后。
 - **使用边界：** 对验证集过拟合；搜索预算超过收益。
 - **例子：** 限定预算搜索树深和正则强度。
+- **可组合：** 消融与单变量对比 ↔ 超参数搜索 · Optuna
 - **资料：** [Optuna · 文档](https://optuna.readthedocs.io/en/stable/)
+
+### 分布偏移与对抗验证
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 评估与实验迭代 › 分布偏移与对抗验证
+
+- **是什么：** 检查训练、验证与测试来源是否容易区分。
+- **什么时候用：** 线下分数和榜单差异大。
+- **使用边界：** 能区分来源只是线索，不等于应删除所有差异特征。
+- **例子：** 训练来源分类器后排查日期和采集设备差异。
+- **可组合：** 分布偏移与对抗验证 ↔ 数据与概念漂移
+- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
+
+### 消融与单变量对比
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 评估与实验迭代 › 消融与单变量对比
+
+- **是什么：** 通过去掉组件或控制改动判断收益来源。
+- **什么时候用：** 多个技巧组合后不知道哪个有效。
+- **使用边界：** 保持划分和预算一致，关注多次运行波动。
+- **例子：** 比较基线、加特征、加融合三组折分数。
+- **可组合：** 消融与单变量对比 ↔ 超参数搜索 · Optuna
+- **资料：** [Google · 深度学习调参手册](https://github.com/google-research/tuning_playbook)
+
+### 榜单、规则与提交纪律
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 评估与实验迭代 › 榜单、规则与提交纪律
+
+- **是什么：** 把公开榜单作为有限反馈，并遵守外部数据规则。
+- **什么时候用：** Kaggle 反复提交与最终选模。
+- **使用边界：** 反复按公开榜调参会过拟合；外部模型使用先读赛规。
+- **例子：** 依据本地折分数选候选，并保留提交记录。
+- **依赖：** 榜单、规则与提交纪律 → 验证集与交叉验证
+- **资料：** [scikit-learn · 交叉验证](https://scikit-learn.org/stable/modules/cross_validation.html)
+
+### 数据质量与问题定义
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 数据质量与问题定义
+
+- **是什么：** 明确每行、标签、时间点、重复和可用信息。
+- **什么时候用：** 建模或分析开始之前。
+- **使用边界：** 标签定义错或采集偏差不能靠换模型修好。
+- **例子：** 写清预测时刻哪些字段已经存在。
+- **子节点：** MCAR / MAR / MNAR
+- **依赖：** 数据质量与问题定义 → 探索性数据分析 EDA
+- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
+
+### MCAR / MAR / MNAR
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 数据质量与问题定义 › MCAR / MAR / MNAR
+
+- **是什么：** 区分缺失是否依赖已观测或未观测信息。
+- **什么时候用：** 缺失值很多或本身带业务含义。
+- **使用边界：** 从观察数据通常无法完全确认缺失机制。
+- **例子：** 调查高收入用户更少填写收入造成的偏差。
+- **可组合：** MCAR / MAR / MNAR ↔ 均值 / 中位数 / 模型填补
+- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
+
+### 类别不平衡处理
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 类别不平衡处理
+
+- **是什么：** 围绕少数类目标调整训练和评价。
+- **什么时候用：** 少数类少但错误代价重要。
+- **使用边界：** 先选匹配业务的指标，不能只追求类别等量。
+- **例子：** 比较原始训练与加权训练的 PR 曲线。
+- **子节点：** 类别权重与代价敏感学习、过采样、欠采样与 SMOTE
+- **资料：** [imbalanced-learn · 用户指南](https://imbalanced-learn.org/stable/user_guide.html)
+
+### 类别权重与代价敏感学习
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 类别不平衡处理 › 类别权重与代价敏感学习
+
+- **是什么：** 给不同类别或样本不同损失权重。
+- **什么时候用：** 少数类漏判成本较高。
+- **使用边界：** 会改变概率表现；阈值与校准另行验证。
+- **例子：** 提升少数类权重并比较召回和误报成本。
+- **对照：** 类别权重与代价敏感学习 ↔ Focal loss / 类别加权
+- **可组合：** 类别权重与代价敏感学习 ↔ 分类阈值调整
+- **资料：** [imbalanced-learn · 用户指南](https://imbalanced-learn.org/stable/user_guide.html)
+
+### 过采样、欠采样与 SMOTE
+
+位置：数据与 AI 知识宇宙 › 验证与特征 › 类别不平衡处理 › 过采样、欠采样与 SMOTE
+
+- **是什么：** 改变训练样本分布或合成少数类样本。
+- **什么时候用：** 类别不平衡且模型对样本分布敏感。
+- **使用边界：** 仅在训练折内做；混合类型和时序不能盲目插值。
+- **例子：** 比较随机过采样、SMOTE 与加权基线。
+- **依赖：** 过采样、欠采样与 SMOTE → Pipeline 与折内预处理
+- **资料：** [imbalanced-learn · 用户指南](https://imbalanced-learn.org/stable/user_guide.html)
 
 ### 训练与后处理
 
@@ -1930,6 +2640,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 类别不平衡或易样本占比过高。
 - **使用边界：** 可能影响概率校准，并非必定提升。
 - **例子：** 比较加权损失与原始交叉熵。
+- **对照：** 类别权重与代价敏感学习 ↔ Focal loss / 类别加权
 - **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
 
 ### 优化训练
@@ -2078,7 +2789,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 训练与验证有差距或资源有限。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从正则化、数据增强 / Mixup / CutMix、混合精度 / 梯度累积中找到对应入口。
-- **子节点：** 正则化、数据增强 / Mixup / CutMix、混合精度 / 梯度累积、EMA / SWA
+- **子节点：** 正则化、数据增强 / Mixup / CutMix、混合精度 / 梯度累积、EMA / SWA、训练显存与吞吐
 - **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
 
 ### 正则化
@@ -2089,7 +2800,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 训练很好而验证较差。
 - **使用边界：** 正则过强导致欠拟合；方法适配不同模型。
 - **例子：** 调权重衰减时固定验证折与训练预算。
-- **子节点：** 权重衰减、Dropout
+- **子节点：** 权重衰减、Dropout、标签平滑
 - **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
 
 ### 权重衰减
@@ -2113,6 +2824,17 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **例子：** 在 MLP 隐层使用适度 Dropout。
 - **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
 
+### 标签平滑
+
+位置：数据与 AI 知识宇宙 › 训练与后处理 › 泛化与效率 › 正则化 › 标签平滑
+
+- **是什么：** 给硬标签分配少量非目标类别概率。
+- **什么时候用：** 分类网络过度确信且验证支持该改动。
+- **使用边界：** 不保证校准改善，也可能影响蒸馏。
+- **例子：** 比较平滑前后的准确率和校准误差。
+- **对照：** 标签平滑 ↔ 温度缩放 Temperature scaling
+- **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
+
 ### 数据增强 / Mixup / CutMix
 
 位置：数据与 AI 知识宇宙 › 训练与后处理 › 泛化与效率 › 数据增强 / Mixup / CutMix
@@ -2121,9 +2843,22 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 图像等任务的数据不足或泛化不足。
 - **使用边界：** 翻转、裁剪可能改变标签含义。
 - **例子：** 自然图像轻量增强；医疗方向性任务先核查语义。
+- **子节点：** MixUp / CutMix
+- **对照：** 测试时增强 TTA ↔ 数据增强 / Mixup / CutMix
 - **可组合：** U-Net · 编解码与跳连 ↔ 数据增强 / Mixup / CutMix
 - **可组合：** CNN · 卷积网络 ↔ 数据增强 / Mixup / CutMix
 - **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
+
+### MixUp / CutMix
+
+位置：数据与 AI 知识宇宙 › 训练与后处理 › 泛化与效率 › 数据增强 / Mixup / CutMix › MixUp / CutMix
+
+- **是什么：** 混合样本或局部区域，同时混合标签。
+- **什么时候用：** 视觉分类训练需要增加有效变化。
+- **使用边界：** 变换必须保持任务含义；不直接套用所有标签类型。
+- **例子：** 在相同划分对比标准增强与 CutMix。
+- **可组合：** MixUp / CutMix ↔ CNN · 卷积网络
+- **资料：** [Torchvision · MixUp / CutMix](https://docs.pytorch.org/vision/stable/auto_examples/transforms/plot_cutmix_mixup.html)
 
 ### 混合精度 / 梯度累积
 
@@ -2133,6 +2868,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 显存紧张或训练吞吐不足。
 - **使用边界：** 检查数值稳定；累积不总等价于真正大 batch。
 - **例子：** 用自动混合精度并监测 NaN。
+- **可组合：** 梯度累积 ↔ 混合精度 / 梯度累积
 - **资料：** [PyTorch · 自动混合精度](https://docs.pytorch.org/docs/stable/amp.html)
 
 ### EMA / SWA
@@ -2145,6 +2881,40 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **例子：** 同样验证流程比较末轮权重与平均权重。
 - **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
 
+### 训练显存与吞吐
+
+位置：数据与 AI 知识宇宙 › 训练与后处理 › 泛化与效率 › 训练显存与吞吐
+
+- **是什么：** 区分参数、优化器状态、激活与输入占用。
+- **什么时候用：** 训练显存不足或 GPU 利用率低。
+- **使用边界：** 先测瓶颈；省显存的改动可能更慢。
+- **例子：** 检查是长序列激活还是模型状态占满显存。
+- **子节点：** 梯度累积、激活检查点
+- **可组合：** DDP / FSDP ↔ 训练显存与吞吐
+- **资料：** [PyTorch · 激活检查点](https://docs.pytorch.org/docs/stable/checkpoint.html)
+
+### 梯度累积
+
+位置：数据与 AI 知识宇宙 › 训练与后处理 › 泛化与效率 › 训练显存与吞吐 › 梯度累积
+
+- **是什么：** 多个微批次累积梯度再更新一次。
+- **什么时候用：** 单次放不下期望的有效批量。
+- **使用边界：** BatchNorm 和调度步数等使其不总等价于大批次。
+- **例子：** 每四个微批次执行一次优化器更新。
+- **可组合：** 梯度累积 ↔ 混合精度 / 梯度累积
+- **资料：** [PyTorch · 分布式训练](https://docs.pytorch.org/docs/stable/distributed.html)
+
+### 激活检查点
+
+位置：数据与 AI 知识宇宙 › 训练与后处理 › 泛化与效率 › 训练显存与吞吐 › 激活检查点
+
+- **是什么：** 反向传播时重算部分激活以省显存。
+- **什么时候用：** 中间激活成为显存瓶颈。
+- **使用边界：** 以额外计算换显存，不是保存训练断点。
+- **例子：** 对深层网络的若干模块启用检查点。
+- **可组合：** 激活检查点 ↔ QLoRA
+- **资料：** [PyTorch · 激活检查点](https://docs.pytorch.org/docs/stable/checkpoint.html)
+
 ### 预测后处理
 
 位置：数据与 AI 知识宇宙 › 训练与后处理 › 预测后处理
@@ -2153,7 +2923,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 模型训练完后，按目标解决剩余问题。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从概率校准、分类阈值调整、融合 / Stacking中找到对应入口。
-- **子节点：** 概率校准、分类阈值调整、融合 / Stacking、保形预测 Conformal prediction
+- **子节点：** 概率校准、分类阈值调整、融合 / Stacking、保形预测 Conformal prediction、测试时增强 TTA
 - **资料：** [scikit-learn · 概率校准](https://scikit-learn.org/stable/modules/calibration.html)
 
 ### 概率校准
@@ -2164,7 +2934,8 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 决策依赖概率质量，而非仅类别。
 - **使用边界：** 必须使用独立或交叉验证的校准预测。
 - **例子：** 检查可靠性图、LogLoss 与 Brier 分数。
-- **子节点：** 温度缩放 Temperature scaling、Platt / Isotonic 校准
+- **子节点：** 温度缩放 Temperature scaling、Platt / Isotonic 校准、保序回归校准
+- **可组合：** ROC-AUC / PR-AUC / Log Loss ↔ 概率校准
 - **对照：** 分类阈值调整 ↔ 概率校准
 - **资料：** [scikit-learn · 概率校准](https://scikit-learn.org/stable/modules/calibration.html)
 
@@ -2176,6 +2947,8 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 神经分类模型过度自信，希望校准置信度。
 - **使用边界：** 标准单温度不改变 argmax 类别；与生成采样温度用途不同。
 - **例子：** 在独立校准集拟合 T，再评估未见数据的概率质量。
+- **对照：** 标签平滑 ↔ 温度缩放 Temperature scaling
+- **对照：** 采样温度、Top-p 与解码 ↔ 温度缩放 Temperature scaling
 - **依赖：** 温度缩放 Temperature scaling → 验证集与交叉验证
 - **资料：** [温度缩放原论文 · 2017](https://arxiv.org/abs/1706.04599)
 
@@ -2187,6 +2960,18 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 传统模型的概率校准候选。
 - **使用边界：** 校准集小的时候复杂映射易过拟合。
 - **例子：** 比较独立数据上的 Brier 分数。
+- **对照：** 保序回归校准 ↔ Platt / Isotonic 校准
+- **资料：** [scikit-learn · 概率校准](https://scikit-learn.org/stable/modules/calibration.html)
+
+### 保序回归校准
+
+位置：数据与 AI 知识宇宙 › 训练与后处理 › 预测后处理 › 概率校准 › 保序回归校准
+
+- **是什么：** 用单调非参数映射修正预测概率。
+- **什么时候用：** 校准数据足够且偏差难用简单缩放表达。
+- **使用边界：** 小校准集容易过拟合；不能在最终测试标签上拟合。
+- **例子：** 在独立校准集上比较 Platt 与保序映射。
+- **对照：** 保序回归校准 ↔ Platt / Isotonic 校准
 - **资料：** [scikit-learn · 概率校准](https://scikit-learn.org/stable/modules/calibration.html)
 
 ### 分类阈值调整
@@ -2197,6 +2982,8 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 优化 F1、召回率或业务错判成本。
 - **使用边界：** 不等于概率校准；不能用测试标签挑阈值。
 - **例子：** 在验证集选择满足召回要求的阈值。
+- **可组合：** 分类：Precision / Recall / F1 ↔ 分类阈值调整
+- **可组合：** 类别权重与代价敏感学习 ↔ 分类阈值调整
 - **对照：** 分类阈值调整 ↔ 概率校准
 - **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
 
@@ -2208,7 +2995,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 多个可靠模型在不同样本上各有所长。
 - **使用边界：** stacking 的第二层必须使用折外预测，不能吃训练内预测。
 - **例子：** 用 OOF 预测训练线性融合器，再评估独立数据。
-- **子节点：** Bagging / 平均融合、Stacking · 二层融合
+- **子节点：** Bagging / 平均融合、Stacking · 二层融合、加权平均与 Blending
 - **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
 
 ### Bagging / 平均融合
@@ -2229,7 +3016,19 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 有互补模型且验证样本足够。
 - **使用边界：** 训练内预测会向融合器泄漏。
 - **例子：** 用 OOF 概率训练逻辑回归融合器。
+- **可组合：** OOF 折外预测 ↔ Stacking · 二层融合
 - **依赖：** Stacking · 二层融合 → 验证集与交叉验证
+- **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
+
+### 加权平均与 Blending
+
+位置：数据与 AI 知识宇宙 › 训练与后处理 › 预测后处理 › 融合 / Stacking › 加权平均与 Blending
+
+- **是什么：** 把多个预测按权重组合。
+- **什么时候用：** 模型错误有互补性且验证支持收益。
+- **使用边界：** 不要用最终测试标签选权重；相似模型可能收益很小。
+- **例子：** 依据折外结果比较等权与少量候选权重。
+- **可组合：** OOF 折外预测 ↔ 加权平均与 Blending
 - **资料：** [scikit-learn · 用户指南](https://scikit-learn.org/stable/user_guide.html)
 
 ### 保形预测 Conformal prediction
@@ -2244,6 +3043,17 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **依赖：** 保形预测 Conformal prediction → 验证集与交叉验证
 - **资料：** [保形预测入门论文](https://arxiv.org/abs/2107.07511)
 
+### 测试时增强 TTA
+
+位置：数据与 AI 知识宇宙 › 训练与后处理 › 预测后处理 › 测试时增强 TTA
+
+- **是什么：** 对同一样本的多个合理变换预测再汇总。
+- **什么时候用：** 任务对翻转等变换应保持不变。
+- **使用边界：** 会增加推理成本；方向敏感任务可能受损。
+- **例子：** 对原图和水平翻转图的概率取平均。
+- **对照：** 测试时增强 TTA ↔ 数据增强 / Mixup / CutMix
+- **资料：** [Torchvision · MixUp / CutMix](https://docs.pytorch.org/vision/stable/auto_examples/transforms/plot_cutmix_mixup.html)
+
 ### 基础模型与生成式 AI
 
 位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI
@@ -2252,7 +3062,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 使用现代预训练模型解决实际问题。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从预训练与迁移学习、模型适配、RAG · 检索增强生成中找到对应入口。
-- **子节点：** 预训练与迁移学习、模型适配、RAG · 检索增强生成、应用与效率
+- **子节点：** 预训练与迁移学习、模型适配、RAG · 检索增强生成、应用与效率、生成模型的其他家族、提示、上下文与推理
 - **资料：** [Hugging Face · Transformers](https://huggingface.co/docs/transformers/index)
 
 ### 预训练与迁移学习
@@ -2264,6 +3074,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **使用边界：** 检查预训练数据规则、模型许可和领域差异。
 - **例子：** 先冻结编码器做基线，再微调。
 - **子节点：** Embedding / 语义向量、多模态模型、扩散与流匹配
+- **可组合：** 迁移学习与域适配 ↔ 预训练与迁移学习
 - **资料：** [Hugging Face · Transformers](https://huggingface.co/docs/transformers/index)
 
 ### Embedding / 语义向量
@@ -2274,6 +3085,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 语义搜索、相似样本、聚类与下游特征。
 - **使用边界：** 相似度高不保证事实一致，需按任务评估。
 - **例子：** 将商品描述编码后检索相似商品。
+- **依赖：** 稠密向量检索 → Embedding / 语义向量
 - **可组合：** Embedding / 语义向量 ↔ 对比学习
 - **可组合：** RAG · 检索增强生成 ↔ Embedding / 语义向量
 - **资料：** [Sentence Transformers · 文档](https://sbert.net/)
@@ -2297,6 +3109,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **使用边界：** 普通表格预测不应因为流行而强行使用。
 - **例子：** 用预训练扩散模型进行图像编辑。
 - **子节点：** 扩散去噪 DDPM 类、流匹配 Flow matching
+- **对照：** 生成对抗网络 GAN ↔ 扩散与流匹配
 - **可组合：** 扩散与流匹配 ↔ LoRA 低秩适配
 - **资料：** [Hugging Face · Diffusers](https://huggingface.co/docs/diffusers/index)
 
@@ -2350,6 +3163,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 全量微调过于昂贵。
 - **使用边界：** 秩与目标层的选择需验证。
 - **例子：** 在注意力投影层加入适配器。
+- **可组合：** 迁移学习与域适配 ↔ LoRA 低秩适配
 - **可组合：** LoRA 低秩适配 ↔ SFT · 监督微调
 - **可组合：** 扩散与流匹配 ↔ LoRA 低秩适配
 - **资料：** [Hugging Face · PEFT](https://huggingface.co/docs/peft/index)
@@ -2362,6 +3176,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 显存紧张的大模型微调。
 - **使用边界：** 量化支持和数值精度必须检查。
 - **例子：** 用低比特基础权重配合 LoRA。
+- **可组合：** 激活检查点 ↔ QLoRA
 - **依赖：** QLoRA → 模型量化
 - **资料：** [Hugging Face · PEFT](https://huggingface.co/docs/peft/index)
 
@@ -2373,6 +3188,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 有可靠示范，想学格式、风格或任务行为。
 - **使用边界：** 不能把微调当作随时更新事实库的首选。
 - **例子：** 用经过检查的问答样例训练任务格式。
+- **对照：** 提示与上下文学习 ↔ SFT · 监督微调
 - **可组合：** LoRA 低秩适配 ↔ SFT · 监督微调
 - **适用：** SFT · 监督微调 → 监督学习
 - **资料：** [Hugging Face · Transformers](https://huggingface.co/docs/transformers/index)
@@ -2385,7 +3201,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 有相应反馈且基础评估已建立。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从DPO · 直接偏好优化、GRPO · 组相对策略优化中找到对应入口。
-- **子节点：** DPO · 直接偏好优化、GRPO · 组相对策略优化
+- **子节点：** DPO · 直接偏好优化、GRPO · 组相对策略优化、RLHF / RLVR 反馈来源
 - **资料：** [Hugging Face · DPO](https://huggingface.co/docs/trl/dpo_trainer)
 
 ### DPO · 直接偏好优化
@@ -2407,9 +3223,22 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 能够给生成结果可靠打分，有足够采样预算。
 - **使用边界：** 奖励投机、采样成本、训练稳定性都要评估。
 - **例子：** 可验证答案的任务中对一组候选计算奖励。
+- **可组合：** RLHF / RLVR 反馈来源 ↔ GRPO · 组相对策略优化
 - **适用：** GRPO · 组相对策略优化 → 强化学习
 - **对照：** DPO · 直接偏好优化 ↔ GRPO · 组相对策略优化
 - **对照：** PPO ↔ GRPO · 组相对策略优化
+- **资料：** [Hugging Face · GRPO](https://huggingface.co/docs/trl/grpo_trainer)
+
+### RLHF / RLVR 反馈来源
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 模型适配 › 偏好与奖励后训练 › RLHF / RLVR 反馈来源
+
+- **是什么：** 区分人类偏好形成的奖励与可验证规则奖励。
+- **什么时候用：** 设计语言模型的训练反馈。
+- **使用边界：** 反馈来源不是一个单独优化算法；奖励有漏洞会被利用。
+- **例子：** 用单元测试反馈训练代码生成，再测未见题。
+- **可组合：** RLHF / RLVR 反馈来源 ↔ GRPO · 组相对策略优化
+- **可组合：** RLHF / RLVR 反馈来源 ↔ PPO
 - **资料：** [Hugging Face · GRPO](https://huggingface.co/docs/trl/grpo_trainer)
 
 ### RAG · 检索增强生成
@@ -2420,7 +3249,9 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 知识需更新、有私有文档或需要证据出处。
 - **使用边界：** 检索错误、文档权限与生成忠实性需要分别验证。
 - **例子：** 检索产品手册片段，让回答附对应来源。
-- **子节点：** 文档切分与索引、混合检索与重排、检索召回与忠实性
+- **子节点：** 文档切分与索引、混合检索与重排、检索召回与忠实性、检索方式
+- **可组合：** 上下文选择与压缩 ↔ RAG · 检索增强生成
+- **可组合：** 固定工作流与自主循环 ↔ RAG · 检索增强生成
 - **可组合：** RAG · 检索增强生成 ↔ Embedding / 语义向量
 - **依赖：** RAG · 检索增强生成 → 生成系统评估
 - **资料：** [RAG 原论文 · 2020](https://arxiv.org/abs/2005.11401)
@@ -2443,6 +3274,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 只用向量检索漏掉精确名称或关键证据。
 - **使用边界：** 召回没找到的文档无法靠重排救回。
 - **例子：** 关键词 + 向量检索合并候选，再重排。
+- **可组合：** 混合检索与结果融合 ↔ 混合检索与重排
 - **资料：** [Sentence Transformers · 文档](https://sbert.net/)
 
 ### 检索召回与忠实性
@@ -2453,7 +3285,73 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 迭代 RAG 链路。
 - **使用边界：** 流畅回答不等于检索正确。
 - **例子：** 单独记录证据召回与答案支持率。
+- **子节点：** Recall@k / MRR / NDCG、证据忠实度与回答正确性
 - **资料：** [RAG 原论文 · 2020](https://arxiv.org/abs/2005.11401)
+
+### Recall@k / MRR / NDCG
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › RAG · 检索增强生成 › 检索召回与忠实性 › Recall@k / MRR / NDCG
+
+- **是什么：** 分别衡量相关证据覆盖与排序质量。
+- **什么时候用：** 比较检索器或重排器。
+- **使用边界：** 需要明确相关性标注；不同指标看不同目标。
+- **例子：** 在固定查询集看前十条是否包含所需证据。
+- **适用：** Recall@k / MRR / NDCG → 排序与推荐
+- **资料：** [Sentence Transformers · 召回与重排](https://sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html)
+
+### 证据忠实度与回答正确性
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › RAG · 检索增强生成 › 检索召回与忠实性 › 证据忠实度与回答正确性
+
+- **是什么：** 分别检查答案是否受证据支持和是否答对问题。
+- **什么时候用：** RAG 答案看似流畅却可能无依据。
+- **使用边界：** LLM 裁判会偏差；保留人工校准样本。
+- **例子：** 核对答案每项事实对应的原文片段。
+- **可组合：** 证据忠实度与回答正确性 ↔ 生成系统评估
+- **资料：** [Hugging Face · RAG 评估实践](https://huggingface.co/learn/cookbook/rag_evaluation)
+
+### 检索方式
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › RAG · 检索增强生成 › 检索方式
+
+- **是什么：** 按关键词、语义向量或两者结合召回证据。
+- **什么时候用：** 模型需要从外部知识找到相关片段。
+- **使用边界：** 先分别测召回和生成，定位是哪一步出错。
+- **例子：** 比较关键词召回与向量召回的漏检样例。
+- **子节点：** BM25 关键词检索、稠密向量检索、混合检索与结果融合
+- **资料：** [Sentence Transformers · 召回与重排](https://sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html)
+
+### BM25 关键词检索
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › RAG · 检索增强生成 › 检索方式 › BM25 关键词检索
+
+- **是什么：** 按词项匹配及文档长度等因素评分。
+- **什么时候用：** 专有名词、编号和精确措辞很重要。
+- **使用边界：** 同义改写可能漏检；分词需要适配语言。
+- **例子：** 检索包含某个产品型号的说明书。
+- **资料：** [Sentence Transformers · 召回与重排](https://sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html)
+
+### 稠密向量检索
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › RAG · 检索增强生成 › 检索方式 › 稠密向量检索
+
+- **是什么：** 将查询和文档编码到向量空间匹配。
+- **什么时候用：** 词面不同但语义相近的查询。
+- **使用边界：** 相似度不等于事实正确；匹配模型与语种领域。
+- **例子：** 用中文嵌入召回同义表述的政策片段。
+- **依赖：** 稠密向量检索 → Embedding / 语义向量
+- **资料：** [Sentence Transformers · 召回与重排](https://sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html)
+
+### 混合检索与结果融合
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › RAG · 检索增强生成 › 检索方式 › 混合检索与结果融合
+
+- **是什么：** 结合关键词与向量结果进行候选融合。
+- **什么时候用：** 两种召回方式存在互补。
+- **使用边界：** 权重或排名融合策略要在查询集上验证。
+- **例子：** 合并两路候选后送交重排器。
+- **可组合：** 混合检索与结果融合 ↔ 混合检索与重排
+- **资料：** [Sentence Transformers · 召回与重排](https://sbert.net/examples/sentence_transformer/applications/retrieve_rerank/README.html)
 
 ### 应用与效率
 
@@ -2463,7 +3361,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 需要工具、资源优化或交付。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从工具调用与 Agent、生成系统评估、模型量化中找到对应入口。
-- **子节点：** 工具调用与 Agent、生成系统评估、模型量化、知识蒸馏
+- **子节点：** 工具调用与 Agent、生成系统评估、模型量化、知识蒸馏、推理缓存与加速
 - **资料：** [Hugging Face · Transformers](https://huggingface.co/docs/transformers/index)
 
 ### 工具调用与 Agent
@@ -2474,8 +3372,44 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 问题确实需要查询、计算或分阶段操作。
 - **使用边界：** Agent 不必使用强化学习；要控制工具权限和失败重试。
 - **例子：** 先查数据库，再计算结果并生成解释。
+- **子节点：** 固定工作流与自主循环、工具调用与 MCP、轨迹评估、权限与停止条件
 - **对照：** 工具调用与 Agent ↔ 强化学习
 - **资料：** [Hugging Face · Transformers](https://huggingface.co/docs/transformers/index)
+
+### 固定工作流与自主循环
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 应用与效率 › 工具调用与 Agent › 固定工作流与自主循环
+
+- **是什么：** 区分预定步骤和由模型决定下一步的流程。
+- **什么时候用：** 任务需要调用工具与多步处理。
+- **使用边界：** 优先按任务确定控制方式；自主循环需停止条件。
+- **例子：** 固定检索后回答，复杂问题再允许迭代检索。
+- **可组合：** 固定工作流与自主循环 ↔ RAG · 检索增强生成
+- **可组合：** 工具调用与 MCP ↔ 固定工作流与自主循环
+- **资料：** [Anthropic · Agent 与工作流](https://www.anthropic.com/engineering/building-effective-agents)
+
+### 工具调用与 MCP
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 应用与效率 › 工具调用与 Agent › 工具调用与 MCP
+
+- **是什么：** 工具调用描述可执行操作，MCP 标准化上下文和工具连接。
+- **什么时候用：** 应用需要连接数据源或外部操作。
+- **使用边界：** 协议不是推理算法，也不自动保证权限和结果可信。
+- **例子：** 通过有明确参数的只读工具查询业务数据。
+- **可组合：** 工具调用与 MCP ↔ 固定工作流与自主循环
+- **资料：** [MCP · 官方协议说明](https://modelcontextprotocol.io/docs/getting-started/intro)
+
+### 轨迹评估、权限与停止条件
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 应用与效率 › 工具调用与 Agent › 轨迹评估、权限与停止条件
+
+- **是什么：** 检查每一步调用、最终结果和成本边界。
+- **什么时候用：** 工具循环需要可调试、可控制。
+- **使用边界：** 仅看最终文本会漏掉无效调用和错误副作用。
+- **例子：** 限制步数并记录每次工具输入、输出和失败。
+- **可组合：** 轨迹评估、权限与停止条件 ↔ 实验跟踪
+- **可组合：** 推理时计算与候选验证 ↔ 轨迹评估、权限与停止条件
+- **资料：** [Anthropic · Agent 与工作流](https://www.anthropic.com/engineering/building-effective-agents)
 
 ### 生成系统评估
 
@@ -2485,6 +3419,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 更换模型、提示词、检索或微调方法时。
 - **使用边界：** 只凭几个漂亮样例判断整体提升。
 - **例子：** 建立固定问题集，对答案和引文单独评分。
+- **可组合：** 证据忠实度与回答正确性 ↔ 生成系统评估
 - **依赖：** RAG · 检索增强生成 → 生成系统评估
 - **资料：** [Hugging Face · Transformers](https://huggingface.co/docs/transformers/index)
 
@@ -2496,6 +3431,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 部署受内存、延迟限制。
 - **使用边界：** 须比较精度、兼容性和实际速度。
 - **例子：** 比较量化前后的任务指标。
+- **可组合：** KV Cache ↔ 模型量化
 - **依赖：** QLoRA → 模型量化
 - **资料：** [Hugging Face · PEFT](https://huggingface.co/docs/peft/index)
 
@@ -2508,6 +3444,149 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **使用边界：** 教师错误也可能传给学生。
 - **例子：** 用软标签训练小分类网络。
 - **资料：** [动手学深度学习 · 中文](https://zh.d2l.ai/)
+
+### 推理缓存与加速
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 应用与效率 › 推理缓存与加速
+
+- **是什么：** 根据显存、延迟和吞吐瓶颈选择执行优化。
+- **什么时候用：** 本地模型服务成本过高。
+- **使用边界：** 提速需在具体硬件和请求长度上测量。
+- **例子：** 同时记录首 token 延迟、总延迟和峰值显存。
+- **子节点：** KV Cache、SDPA / FlashAttention、编译与连续批处理
+- **资料：** [Transformers · KV 缓存策略](https://huggingface.co/docs/transformers/kv_cache)
+
+### KV Cache
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 应用与效率 › 推理缓存与加速 › KV Cache
+
+- **是什么：** 复用历史 token 的键值表示减少重复计算。
+- **什么时候用：** 自回归生成不断追加 token。
+- **使用边界：** 长上下文的缓存会占显存；缓存量化另有误差。
+- **例子：** 比较动态、静态与量化缓存。
+- **可组合：** 注意力与位置表示 ↔ KV Cache
+- **可组合：** KV Cache ↔ 模型量化
+- **资料：** [Transformers · KV 缓存策略](https://huggingface.co/docs/transformers/kv_cache)
+
+### SDPA / FlashAttention
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 应用与效率 › 推理缓存与加速 › SDPA / FlashAttention
+
+- **是什么：** 以优化实现执行注意力运算，减少部分访存开销。
+- **什么时候用：** 注意力成为执行瓶颈且后端支持。
+- **使用边界：** 不等于取消注意力复杂度；掩码和硬件有兼容条件。
+- **例子：** 比较可用注意力后端的吞吐和数值误差。
+- **可组合：** SDPA / FlashAttention ↔ Transformer / ViT
+- **资料：** [Hugging Face · Transformers](https://huggingface.co/docs/transformers/index)
+
+### 编译与连续批处理
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 应用与效率 › 推理缓存与加速 › 编译与连续批处理
+
+- **是什么：** 用执行图优化和请求调度提高吞吐。
+- **什么时候用：** 重复推理或并发请求较多。
+- **使用边界：** 编译有预热和形状约束；吞吐提高未必降低每次延迟。
+- **例子：** 分别测试单请求延迟和并发吞吐。
+- **可组合：** 编译与连续批处理 ↔ 服务监控与效果反馈
+- **资料：** [Transformers · KV 缓存策略](https://huggingface.co/docs/transformers/kv_cache)
+
+### 生成模型的其他家族
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 生成模型的其他家族
+
+- **是什么：** 生成分布还可通过潜变量或对抗训练学习。
+- **什么时候用：** 理解扩散之外的生成路线。
+- **使用边界：** 这里按训练机制组织，可与预训练模型复用交叉。
+- **例子：** 比较 VAE、GAN 与扩散的目标和采样机制。
+- **子节点：** 变分自编码器 VAE、生成对抗网络 GAN
+- **资料：** [VAE · 原论文](https://arxiv.org/abs/1312.6114)、[GAN · 原论文](https://arxiv.org/abs/1406.2661)
+
+### 变分自编码器 VAE
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 生成模型的其他家族 › 变分自编码器 VAE
+
+- **是什么：** 学习潜变量分布与解码器，以变分目标训练。
+- **什么时候用：** 需要连续潜空间或概率生成建模。
+- **使用边界：** 不是普通 AE 加噪声；需理解重构与正则项。
+- **例子：** 从潜变量采样并解码生成数据。
+- **对照：** 变分自编码器 VAE ↔ 自编码器 AE
+- **资料：** [VAE · 原论文](https://arxiv.org/abs/1312.6114)
+
+### 生成对抗网络 GAN
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 生成模型的其他家族 › 生成对抗网络 GAN
+
+- **是什么：** 生成器与判别器通过对抗目标训练。
+- **什么时候用：** 生成建模或研究特定图像任务。
+- **使用边界：** 训练不稳定和模式遗漏需要监测。
+- **例子：** 同时检查生成质量与样本多样性。
+- **对照：** 生成对抗网络 GAN ↔ 扩散与流匹配
+- **资料：** [GAN · 原论文](https://arxiv.org/abs/1406.2661)
+
+### 提示、上下文与推理
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 提示、上下文与推理
+
+- **是什么：** 通过输入组织和生成策略使用已有模型。
+- **什么时候用：** 先测试不用微调能否完成任务。
+- **使用边界：** 输入策略不等于修改权重；仍需独立评估。
+- **例子：** 先用几个示例建立结构化抽取基线。
+- **子节点：** 分词与聊天模板、提示与上下文学习、上下文选择与压缩、采样温度、Top-p 与解码、推理时计算与候选验证
+- **资料：** [Transformers · 文本生成](https://huggingface.co/docs/transformers/main/en/llm_tutorial)
+
+### 分词与聊天模板
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 提示、上下文与推理 › 分词与聊天模板
+
+- **是什么：** 把文本变成 token 并按模型格式组织消息。
+- **什么时候用：** 估算长度、截断或调用聊天模型。
+- **使用边界：** 不同模型模板和 token 计数不通用。
+- **例子：** 使用对应 tokenizer 的聊天模板构造输入。
+- **资料：** [Transformers · 文本生成](https://huggingface.co/docs/transformers/main/en/llm_tutorial)
+
+### 提示与上下文学习
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 提示、上下文与推理 › 提示与上下文学习
+
+- **是什么：** 通过任务说明和示例引导已有模型。
+- **什么时候用：** 任务要求能在输入中说明。
+- **使用边界：** 示例不要包含测试答案；示例顺序也可能影响结果。
+- **例子：** 提供几个工单分类例子后预测新工单。
+- **对照：** 提示与上下文学习 ↔ SFT · 监督微调
+- **资料：** [Transformers · 文本生成](https://huggingface.co/docs/transformers/main/en/llm_tutorial)
+
+### 上下文选择与压缩
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 提示、上下文与推理 › 上下文选择与压缩
+
+- **是什么：** 选择当前步骤真正需要的历史、证据和状态。
+- **什么时候用：** 长文档或多轮工具调用导致输入膨胀。
+- **使用边界：** 窗口能放下不代表能可靠利用；压缩可能丢证据。
+- **例子：** 保留原文引用，压缩无关对话历史。
+- **可组合：** 上下文选择与压缩 ↔ RAG · 检索增强生成
+- **资料：** [Anthropic · Agent 与工作流](https://www.anthropic.com/engineering/building-effective-agents)
+
+### 采样温度、Top-p 与解码
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 提示、上下文与推理 › 采样温度、Top-p 与解码
+
+- **是什么：** 控制生成时从概率分布选 token 的方式。
+- **什么时候用：** 需要调整输出稳定性或多样性。
+- **使用边界：** 采样温度与概率校准的温度缩放用途不同。
+- **例子：** 抽取任务比较确定性解码与低温采样。
+- **对照：** 采样温度、Top-p 与解码 ↔ 温度缩放 Temperature scaling
+- **资料：** [Transformers · 文本生成](https://huggingface.co/docs/transformers/main/en/llm_tutorial)
+
+### 推理时计算与候选验证
+
+位置：数据与 AI 知识宇宙 › 基础模型与生成式 AI › 提示、上下文与推理 › 推理时计算与候选验证
+
+- **是什么：** 用额外候选、检查或搜索换取解题机会。
+- **什么时候用：** 有可用验证器且允许更多延迟。
+- **使用边界：** 更长输出不自动更正确；比较质量与成本。
+- **例子：** 生成多个代码候选并用独立测试筛选。
+- **可组合：** 推理时计算与候选验证 ↔ 轨迹评估、权限与停止条件
+- **资料：** [Hugging Face · 开源 AI Cookbook](https://huggingface.co/learn/cookbook/index)
 
 ### 工程与交付
 
@@ -2549,6 +3628,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 比较多个模型、调参或团队协作。
 - **使用边界：** 只记录最好成绩，忽略失败和计算成本。
 - **例子：** 建立实验表：假设、改动、验证分数、结论。
+- **可组合：** 轨迹评估、权限与停止条件 ↔ 实验跟踪
 - **可组合：** Python 与 pandas ↔ 实验跟踪
 - **资料：** [MLflow · 文档](https://mlflow.org/docs/latest/)
 
@@ -2581,7 +3661,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 成果开始被他人定期使用。
 - **使用边界：** 忽略输入变化、缺失字段和性能下降。
 - **例子：** 监控新数据分布与可获得的线上标签表现。
-- **子节点：** 批量预测 / 在线服务、数据与概念漂移
+- **子节点：** 批量预测 / 在线服务、数据与概念漂移、数据契约与上线一致性、服务监控与效果反馈
 - **依赖：** 部署与监控 → 数据与模型版本
 - **资料：** [MLflow · 文档](https://mlflow.org/docs/latest/)
 
@@ -2603,6 +3683,29 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 上线表现下降、验证与真实使用出现差异。
 - **使用边界：** 分布变了不代表效果必然变差；需要标签或代理证据。
 - **例子：** 按周检查数据分布和分组错误。
+- **可组合：** 分布偏移与对抗验证 ↔ 数据与概念漂移
+- **资料：** [MLflow · 文档](https://mlflow.org/docs/latest/)
+
+### 数据契约与上线一致性
+
+位置：数据与 AI 知识宇宙 › 工程与交付 › 部署与监控 › 数据契约与上线一致性
+
+- **是什么：** 约定字段、类型、缺失和特征计算规则。
+- **什么时候用：** 离线模型要接入真实数据。
+- **使用边界：** 训练与服务使用不同清洗逻辑会导致偏差。
+- **例子：** 部署前校验输入 schema 和特征版本。
+- **可组合：** 数据契约与上线一致性 ↔ Pipeline 与折内预处理
+- **资料：** [MLflow · 文档](https://mlflow.org/docs/latest/)
+
+### 服务监控与效果反馈
+
+位置：数据与 AI 知识宇宙 › 工程与交付 › 部署与监控 › 服务监控与效果反馈
+
+- **是什么：** 同时观察延迟、失败率、分布和延迟到达的标签。
+- **什么时候用：** 模型或报表已经持续交付。
+- **使用边界：** 输入漂移不必然等于效果下降；阈值需与业务联动。
+- **例子：** 监控预测分布，并在标签到达后回算准确性。
+- **可组合：** 编译与连续批处理 ↔ 服务监控与效果反馈
 - **资料：** [MLflow · 文档](https://mlflow.org/docs/latest/)
 
 ### 数据规模与计算
@@ -2613,7 +3716,7 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **什么时候用：** 单机工作流确实无法满足需求。
 - **使用边界：** 子分支是组织这一问题的常用维度；方法可能跨分支使用。
 - **例子：** 从Spark / 分布式处理中找到对应入口。
-- **子节点：** Spark / 分布式处理
+- **子节点：** Spark / 分布式处理、DDP / FSDP
 - **资料：** [Apache Spark · 文档](https://spark.apache.org/docs/latest/)
 
 ### Spark / 分布式处理
@@ -2626,6 +3729,17 @@ Python 与 pandas → 深度学习 → Transformer / ViT → 预训练与迁移�
 - **例子：** 先尝试列式存储和本地 SQL，再评估分布式需求。
 - **对照：** Spark / 分布式处理 ↔ DuckDB / Polars
 - **资料：** [Apache Spark · 文档](https://spark.apache.org/docs/latest/)
+
+### DDP / FSDP
+
+位置：数据与 AI 知识宇宙 › 工程与交付 › 数据规模与计算 › DDP / FSDP
+
+- **是什么：** DDP 同步多卡梯度，FSDP 分片模型状态。
+- **什么时候用：** 单卡速度或模型容量确实受限。
+- **使用边界：** 多卡有通信成本；不是直接增加数据量就必然更快。
+- **例子：** 小模型用 DDP，状态放不下时评估分片。
+- **可组合：** DDP / FSDP ↔ 训练显存与吞吐
+- **资料：** [PyTorch · 分布式训练](https://docs.pytorch.org/docs/stable/distributed.html)
 
 ## 组合方案
 
@@ -2708,6 +3822,36 @@ Embedding / 语义向量 → 混合检索与重排 → RAG · 检索增强生成
 示范数据对应 SFT；偏好对对应 DPO；能可靠打分且有预算时才考虑 GRPO。LoRA 是可组合的微调手段。
 
 验证：这些也是条件选择。保留未见任务与回归集，防止奖励投机和原能力退化。
+
+### 业务报表 · 从口径到行动
+
+每次报表对不上，结论难以复用。
+
+数据质量与问题定义 → 事实表、维度表与粒度 → 指标体系 → BI 与分析交付 → 结论、证据与行动
+
+先固定粒度与计算口径，再组织看板和行动建议。
+
+验证：对账源表总量、检查重复连接，邀请业务复核指标定义。
+
+### 少数类预测 · 从评价到训练
+
+准确率高，但少数类几乎抓不到。
+
+指标与目标对齐 → 分层交叉验证 → Pipeline 与折内预处理 → 类别权重与代价敏感学习 → 过采样、欠采样与 SMOTE → 分类阈值调整
+
+加权与采样是需要分别比较的候选，不是必须叠加的步骤；最终按业务成本选择阈值。
+
+验证：采样仅发生在训练折；比较 PR、召回、误报和概率偏差。
+
+### RAG · 找到证据再回答
+
+回答流畅，但文档证据常常找错。
+
+文档切分与索引 → BM25 关键词检索 → 稠密向量检索 → 混合检索与结果融合 → 混合检索与重排 → 证据忠实度与回答正确性
+
+关键词和向量是并行候选，融合后重排；把召回故障与生成故障分开诊断。
+
+验证：固定查询集，分别比较 Recall@k、回答正确性、证据支持率和延迟。
 
 ## 范围与出处
 

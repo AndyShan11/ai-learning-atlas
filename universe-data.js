@@ -5,10 +5,16 @@ import {
   paths,
   recipes,
 } from "./data.js";
+import {
+  expansionSources,
+  expandUniverse,
+  expansionRelations,
+} from "./universe-expansion.js";
 export { paths, recipes };
 export const reviewed = "2026-09-13";
 export const sources = {
   ...originalSources,
+  ...expansionSources,
   rlTree: [
     "RL 算法分类 · Spinning Up",
     "https://spinningup.openai.com/en/latest/spinningup/rl_intro2.html",
@@ -1306,6 +1312,7 @@ export const tree = B(
 );
 catalog.get("rl").avoid =
   "普通固定数据预测题通常不需要 RL。无模型 / 模型式按是否使用环境模型区分；离线 / 在线按数据获取方式区分，这两种维度可以交叉。";
+expandUniverse(tree, catalog, add, paths, recipes);
 const records = [];
 export const hierarchy = [];
 function visit(t, parent = null, domain = null, depth = 0) {
@@ -1346,6 +1353,7 @@ export const relationTypes = {
 };
 // 方向明确：方法 → 适用任务；概念 → 前置；组合与对照是对称关系。
 export const relations = [
+  ...expansionRelations,
   ["logistic", "binary", "applies"],
   ["logistic", "multiclass", "applies"],
   ["gbdt", "classification", "applies"],

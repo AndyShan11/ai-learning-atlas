@@ -7,6 +7,7 @@ import {
   nodeMap,
   domains,
   relations,
+  recipes,
   ancestors,
 } from "../universe-data.js";
 const { chromium } = await import(
@@ -197,7 +198,7 @@ try {
     await page.locator('#recommendation [data-node="sac"]').click();
     assert.equal(await page.locator("#detail h2").innerText(), "SAC / TD3");
     await page.locator('[data-view="recipes"]').click();
-    assert.equal(await page.locator(".recipe").count(), 8);
+    assert.equal(await page.locator(".recipe").count(), recipes.length);
     await page.locator('[data-view="updates"]').click();
     await fits();
     // Every expanded node has a usable note, ancestry and child navigation.

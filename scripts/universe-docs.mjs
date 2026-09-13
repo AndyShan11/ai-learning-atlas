@@ -10,7 +10,7 @@ import {
   paths,
   recipes,
 } from "../universe-data.js";
-let text = `# 知图 · 知识宇宙 2.0\n\n结构更新：${reviewed}。${nodes.length} 个节点（含模块、子类、方法），${nodes.length - 1} 条层级连线，${relations.length} 条跨树关系。\n\n[打开交互版](https://andyshan11.github.io/ai-learning-atlas/)\n\n## 完整导航树\n\n层级是组织知识的方式，不是把不同维度强行当作互斥类别。跨树关系见各节点。\n\n`;
+let text = `# 知图 · 知识宇宙 2.1\n\n结构更新：${reviewed}。${nodes.length} 个节点（含模块、子类、方法），${nodes.length - 1} 条层级连线，${relations.length} 条跨树关系。\n\n[打开交互版](https://andyshan11.github.io/ai-learning-atlas/)\n\n## 完整导航树\n\n层级是组织知识的方式，不是把不同维度强行当作互斥类别。跨树关系见各节点。\n\n`;
 function outline(id, level = 0) {
   const n = nodeMap.get(id);
   text +=
