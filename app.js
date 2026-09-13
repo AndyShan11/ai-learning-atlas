@@ -1,12 +1,17 @@
 import {
   nodes,
   domains,
-  sections,
   sources,
   paths,
   recipes,
   reviewed,
-} from "./data.js";
+  nodeMap,
+  ancestors,
+  descendants,
+  neighborhood,
+  relationTypes,
+} from "./universe-data.js";
+import { createUniverse } from "./universe.js";
 const $ = (s) => document.querySelector(s);
 const esc = (s) =>
   String(s).replace(
@@ -19,7 +24,7 @@ const esc = (s) =>
 const byId = new Map(nodes.map((n) => [n.id, n]));
 const domainById = new Map(domains.map((n) => [n.id, n]));
 const state = { view: "map", domain: null, node: null, path: "all" };
-let resizeObserver;
+let galaxy;
 const links = (ids) =>
   ids
     .map(
@@ -42,6 +47,8 @@ function route() {
       ? params.get("domain")
       : null;
   render();
+  if (state.view === "map" && (state.node || state.domain))
+    galaxy?.focus(state.node || state.domain);
 }
 function saveRoute() {
   const p = new URLSearchParams();
@@ -77,7 +84,15 @@ function render() {
           `<button data-domain="${d.id}" class="${state.domain === d.id && state.view === "map" ? "active" : ""}" ${state.domain === d.id && state.view === "map" ? 'aria-current="page"' : ""}><span class="nav-dot" style="--branch:${d.color}"></span>${esc(d.title)}</button>`,
       )
       .join("");
-  resizeObserver?.disconnect();
+  if (state.view !== "map") {
+    galaxy?.destroy();
+    galaxy = null;
+  }
+  document.body.classList.toggle("map-view", state.view === "map");
+  document.body.classList.toggle(
+    "has-selection",
+    Boolean(state.node) && state.view === "map",
+  );
   if (state.view === "map") renderMap();
   else if (state.view === "choose") renderChoose();
   else if (state.view === "recipes") renderRecipes();
@@ -91,67 +106,72 @@ function pathStrip() {
     : "";
 }
 function renderMap() {
-  const d = domainById.get(state.domain);
-  $("#content").innerHTML =
-    pathStrip() +
-    `<div class="map-toolbar"><div class="breadcrumbs"><button data-domain="">全景总览</button>${d ? `<span aria-hidden="true">/</span><span>${esc(d.title)}</span>` : `<span> / ${domains.length} 个模块 · ${nodes.length} 个知识节点</span>`}</div><div class="toolbar-actions"><button class="soft-btn" id="export-svg">导出 SVG</button><button class="soft-btn" id="print">打印</button>${state.node ? '<button class="soft-btn mobile-detail-link" id="read-detail">阅读详情 ↓</button>' : ""}</div></div>`;
-  if (d) {
-    $("#content").insertAdjacentHTML(
-      "beforeend",
-      `<div class="domain-head" style="--branch:${d.color}"><p class="eyebrow">${d.en}</p><h2>${esc(d.title)}</h2><p>${esc(d.summary)}</p></div><div class="domain-sections" style="--branch:${d.color}">${sections
-        .filter((s) => s.domain === d.id)
-        .map(
-          (s) =>
-            `<section class="branch-section"><h3>${esc(s.title)}</h3><div class="branch-leaves">${nodes
-              .filter((n) => n.section === s.id)
-              .map(
-                (n) =>
-                  `<button class="leaf ${state.node === n.id ? "selected" : ""}" data-node="${n.id}" aria-pressed="${state.node === n.id}"><span class="leaf-title">${esc(n.title)}</span><span class="leaf-desc">${esc(n.what)}</span><span class="leaf-tags"><span>${n.priority}</span>${paths[state.path].steps.includes(n.id) ? '<span class="recommend">本方向主线</span>' : ""}</span></button>`,
-              )
-              .join("")}</div></section>`,
-        )
-        .join("")}</div>`,
-    );
-  } else {
-    const positions = domains.map((d, i) => ({
-      d,
-      x: i < 4 ? 16 : 674,
-      y: 34 + (i % 4) * 166,
-      i,
-    }));
-    $("#content").insertAdjacentHTML(
-      "beforeend",
-      `<div class="map-surface"><div class="map-stage"><svg class="map-connections" viewBox="0 0 960 700" aria-hidden="true">${positions.map(({ d, x, y, i }) => `<path style="--branch:${d.color}" d="M ${i < 4 ? 354 : 606} 361 C ${i < 4 ? 310 : 650} 361, ${i < 4 ? 330 : 630} ${y + 63}, ${i < 4 ? 286 : 674} ${y + 63}"/>`).join("")}</svg><div class="root-node"><small>FROM STRUCTURE TO PRACTICE</small><h2>数据与 AI</h2><p>大结构 → 选方法 → 会组合</p></div>${positions.map(({ d, x, y, i }) => `<button class="overview-node ${state.path !== "all" && !d.paths.includes(state.path) ? "dim" : ""}" style="left:${x}px;top:${y}px;--branch:${d.color}" data-domain="${d.id}"><span class="num">0${i + 1} / ${d.en}</span><span class="node-arrow" aria-hidden="true">↗</span><h3>${esc(d.title)}</h3><p>${esc(d.hint)}</p></button>`).join("")}</div></div><div class="map-bottom"><span><span class="legend-line"></span>连线表示知识模块组织；不是互斥分类</span><strong>点击任一分支，展开具体方法 ↗</strong></div><div class="orientation"><b>先分清两个维度：</b>监督 / 无监督 / 强化，回答“从什么反馈学习”；树模型 / 神经网络，回答“用什么模型”。<b>深度学习可以与强化学习组合。</b></div>`,
-    );
-    const surface = $(".map-surface"),
-      stage = $(".map-stage");
-    const fit = () => {
-      if (innerWidth <= 760) {
-        surface.style.height = "auto";
-        stage.style.transform = "none";
-      } else {
-        const scale = Math.min(1, (surface.clientWidth - 2) / 960);
-        stage.style.transform = `scale(${scale})`;
-        surface.style.height = 700 * scale + "px";
-      }
+  if (!document.querySelector("#universe")) {
+    $("#content").innerHTML =
+      `<div class="universe-toolbar"><div class="layout-switch" aria-label="图形布局"><button id="layout-orbit" class="active" aria-pressed="true">星系布局</button><button id="layout-tree" aria-pressed="false">树形布局</button></div><span class="universe-count">${nodes.length} 星体 · ${hierarchyCount()} 条层级线</span><button class="soft-btn" id="export-svg">导出全图</button></div>
+   <div class="universe-frame"><div id="universe"></div><div class="map-controls"><button id="zoom-in" aria-label="放大">+</button><button id="zoom-out" aria-label="缩小">−</button><button id="fit-all">全景</button><button id="expand-all">全部展开</button></div></div>
+   <div class="universe-options"><span class="edge-legend"><i class="solid"></i>层级包含</span><label><input type="checkbox" id="relations-toggle" checked>跨树关联</label><label><input type="checkbox" id="all-relations">显示全部关联</label><label><input type="checkbox" id="all-labels">所有名称</label><label class="depth-control">层级 <select id="depth-limit" aria-label="显示层级"><option value="99">全部</option><option value="2">2 层</option><option value="3">3 层</option><option value="4">4 层</option></select></label></div>
+   <div class="cosmic-caption">同一张图，逐层看清。金色虚线：依赖 · 蓝色虚线：适用 · 紫色虚线：可组合。<span>放大后自动显示细分名称；点击星体高亮祖先与关联。</span></div>`;
+    galaxy = createUniverse($("#universe"), {
+      onSelect: (id) => focusNode(id, false),
+    });
+    $("#universe").addEventListener("depthreset", () => {
+      $("#depth-limit").value = "99";
+    });
+    $("#zoom-in").onclick = () => galaxy.zoomBy(1.35);
+    $("#zoom-out").onclick = () => galaxy.zoomBy(1 / 1.35);
+    $("#fit-all").onclick = () => galaxy.home();
+    $("#expand-all").onclick = () => {
+      galaxy.expandAll();
+      $("#depth-limit").value = "99";
     };
-    resizeObserver = new ResizeObserver(fit);
-    resizeObserver.observe(surface);
-    fit();
+    for (const mode of ["orbit", "tree"])
+      $("#layout-" + mode).onclick = () => {
+        galaxy.mode(mode);
+        for (const m of ["orbit", "tree"]) {
+          $("#layout-" + m).classList.toggle("active", m === mode);
+          $("#layout-" + m).setAttribute("aria-pressed", String(m === mode));
+        }
+      };
+    $("#relations-toggle").onchange = (e) => galaxy.relations(e.target.checked);
+    $("#all-relations").onchange = (e) => galaxy.allRelations(e.target.checked);
+    $("#all-labels").onchange = (e) => galaxy.labels(e.target.checked);
+    $("#depth-limit").onchange = (e) => galaxy.depth(e.target.value);
   }
+  galaxy.path(state.path);
+  galaxy.select(state.node);
+}
+function hierarchyCount() {
+  return nodes.length - 1;
 }
 function renderDetail() {
   const n = byId.get(state.node);
   if (!n) {
     $("#detail").innerHTML =
-      `<div class="detail-top"><p class="eyebrow">HOW TO READ THIS MAP</p><span class="badge">从这里开始</span></div><h2>每个知识点，<br>都有自己的位置。</h2><p class="detail-summary">不用一次学完。先选一个分支，了解它解决哪类问题。</p><div class="welcome-art" aria-hidden="true"><span>是什么</span><span>什么时候用</span><span>和谁组合</span></div><ol class="welcome-steps"><li><span class="step-no">01</span><div><strong>先建立大结构</strong><p>查看模块与分支，分清学习方式、模型和训练技巧。</p></div></li><li><span class="step-no">02</span><div><strong>再看适用条件</strong><p>点开节点，查看使用场景、边界和具体例子。</p></div></li><li><span class="step-no">03</span><div><strong>把知识连起来</strong><p>沿关联节点跳转，或在“组合方案”里看完整流程。</p></div></li></ol><div class="detail-block"><h3>从你提到的问题出发</h3><button class="example-link" data-node="rl">强化学习属于哪里？ <span>↗</span></button><button class="example-link" data-node="cosine">余弦退火什么时候用？ <span>↗</span></button><button class="example-link" data-node="temperature">温度缩放能改变什么？ <span>↗</span></button></div><p class="reviewed">“先学 / 按需 / 进阶”是学习建议，不是新旧或强弱排名。</p>`;
+      `<div class="detail-top"><p class="eyebrow">WELCOME, EXPLORER</p><span class="badge">知识宇宙 2.0</span></div><div class="inspector-planet" aria-hidden="true"></div><h2>每一颗星，<br>都连着一条知识脉络。</h2><p class="detail-summary">这里的 ${nodes.length} 个节点都在同一张画布上。大星体是模块，沿连线继续探索子类、算法与具体技巧。</p><ol class="welcome-steps"><li><span class="step-no">01</span><div><strong>放大，而不是翻页</strong><p>拖动探索，滚轮缩放；双击星体聚焦整棵子树。</p></div></li><li><span class="step-no">02</span><div><strong>看清父子关系</strong><p>点选星体后，祖先路径会亮起。树形布局适合逐层阅读。</p></div></li><li><span class="step-no">03</span><div><strong>跨星系理解方法</strong><p>虚线标明适用、依赖、组合或对照；箭头表示方向。</p></div></li></ol><button class="example-link" data-node="supervised">监督学习有哪些子类？ ↗</button><button class="example-link" data-node="unsupervised">无监督学习怎么继续分？ ↗</button><button class="example-link" data-node="schedules">学习率调度有哪些方法？ ↗</button><p class="reviewed">层级线表示知识组织；跨维度方法允许多重关联。学习前置“依赖”是建议，不是强制课程顺序。</p>`;
     return;
   }
-  const d = domainById.get(n.domain),
-    s = sections.find((s) => s.id === n.section);
+  const chain = ancestors(n.id),
+    rels = neighborhood(n.id);
   $("#detail").innerHTML =
-    `<div class="detail-top"><p class="eyebrow">KNOWLEDGE NOTE</p><span class="badge">${n.priority}</span></div><h2>${esc(n.title)}</h2><div class="detail-ancestry">${esc(d.title)} › ${esc(s.title)}</div><div class="detail-block"><h3>01 · 它是什么</h3><p>${esc(n.what)}</p></div><div class="detail-block"><h3>02 · 什么时候用</h3><p>${esc(n.when)}</p></div><div class="detail-block"><h3>03 · 使用边界</h3><p>${esc(n.avoid)}</p></div><div class="detail-block example"><h3>一个具体例子</h3><p>${esc(n.example)}</p></div><div class="detail-block"><h3>关联知识 · 组合、对照与下一步</h3><div class="related">${links(n.related)}</div></div><div class="detail-block"><h3>继续读 · 官方文档 / 原始资料</h3><ul class="source-links">${n.sources.map((id) => `<li><a href="${sources[id][1]}" target="_blank" rel="noopener">${esc(sources[id][0])} ↗</a></li>`).join("")}</ul></div><button class="soft-btn" id="copy-link">复制当前节点链接</button><p class="reviewed">编写 / 核查日期 ${n.reviewed} · 简介为教学归纳，具体 API 与限制以链接版本为准。</p>`;
+    `<div class="detail-top"><p class="eyebrow">SELECTED CELESTIAL BODY</p><button id="inspector-toggle" class="soft-btn inspector-toggle">展开 / 收起笔记</button><button id="close-detail" class="soft-btn" aria-label="关闭详情">×</button></div><div class="node-location">第 ${n.depth} 层 · ${n.children.length ? "包含 " + n.children.length + " 个直接子节点" : "具体知识点"}</div><h2>${esc(n.title)}</h2><div class="detail-ancestry">${chain.map((x) => `<button data-node="${x.id}">${esc(x.title)}</button>`).join("<span>›</span>")}</div><div class="detail-actions"><button class="soft-btn" id="focus-selection">聚焦这棵子树</button>${n.children.length ? '<button class="soft-btn" id="collapse-selection">展开 / 折叠子树</button>' : ""}</div>${n.children.length ? `<div class="detail-block"><h3>下一层 · 直接子类</h3><div class="child-links">${n.children.map((id) => `<button data-node="${id}"><span>${esc(byId.get(id).title)}</span><small>${byId.get(id).children.length ? byId.get(id).children.length + " 个分支" : "知识点"} ↗</small></button>`).join("")}</div></div>` : ""}<div class="detail-block"><h3>01 · 它是什么</h3><p>${esc(n.what)}</p></div><div class="detail-block"><h3>02 · 什么时候用</h3><p>${esc(n.when)}</p></div><div class="detail-block"><h3>03 · 使用边界</h3><p>${esc(n.avoid)}</p></div><div class="detail-block example"><h3>一个具体例子</h3><p>${esc(n.example)}</p></div>${
+      rels.length
+        ? `<div class="detail-block"><h3>跨树关系 · 同时显示在画布上</h3><div class="typed-relations">${rels
+            .map((r) => {
+              const other = r.source === n.id ? r.target : r.source;
+              return `<button data-node="${other}" style="--relation:${relationTypes[r.type].color}"><span class="relation-label">${r.label}${["requires", "applies"].includes(r.type) ? (r.source === n.id ? " →" : " ←") : " ↔"}</span><span>${esc(byId.get(other).title)}</span></button>`;
+            })
+            .join("")}</div></div>`
+        : ""
+    }<div class="detail-block"><h3>继续读 · 原始资料</h3><ul class="source-links">${n.sources.map((id) => `<li><a href="${sources[id][1]}" target="_blank" rel="noopener">${esc(sources[id][0])} ↗</a></li>`).join("")}</ul></div><button class="soft-btn" id="copy-link">复制当前节点链接</button><p class="reviewed">${n.reviewed} · 条件为教学归纳，具体限制以原文为准。</p>`;
   $("#detail").scrollTop = 0;
+  $("#focus-selection").onclick = () => galaxy?.focus(n.id);
+  $("#collapse-selection")?.addEventListener("click", () =>
+    galaxy?.toggle(n.id),
+  );
+  $("#inspector-toggle").onclick = () =>
+    document.body.classList.toggle("inspector-expanded");
+  $("#close-detail").onclick = () => go({ node: null });
 }
 export function recommend(task, condition) {
   if (task === "analytics")
@@ -282,24 +302,20 @@ function renderRecipes() {
 }
 function renderUpdates() {
   $("#content").innerHTML =
-    `<h2 class="view-title">更新知识，而不追逐名词。</h2><p class="view-lead">基于 AMAI 2022 路线图的重构思路，重新编写内容与界面。核查日期 ${reviewed}；不是“所有 2026 技术”的穷尽目录。</p><div class="update-block"><h3>这次重新组织了什么</h3><ul><li>从职业工具清单改为 8 个知识模块，分开学习方式、模型、验证和训练技巧。</li><li>每个节点增加定义、适用条件、使用边界、例子和关联知识。</li><li>新增数据分析 / Kaggle / 生成式 AI 三条学习主线，以及条件选择器与组合方案。</li><li>经典不等于淘汰。“按需”表示对当前目标的优先级，不表示业界弃用。</li></ul></div><div class="update-block"><h3>内容取舍记录</h3><table class="updates-table"><thead><tr><th>内容</th><th>处理与原因</th></tr></thead><tbody><tr><td>LoRA / QLoRA、DPO、GRPO、TabPFN</td><td>补充到适配、后训练、表格模型的位置，写明资源、反馈与规则边界。不是所有任务的默认选择。</td></tr><tr><td>RAG、嵌入、多模态与生成评估</td><td>补充现代应用链路。“新增到本图”不代表发明于 2022 年后；RAG 原论文发表于 2020 年。</td></tr><tr><td>线性模型、树模型、TF-IDF、统计与实验</td><td>保留。仍能提供低成本基线或关键分析能力，不因年代较早而移除。</td></tr><tr><td>RNN / LSTM、SVM</td><td>保留为按需分支。说明适配场景，不放在所有任务的默认主线上。</td></tr><tr><td>大数据平台与分布式技术清单</td><td>缩到工程模块，等规模需求明确再学。对当前数据分析与 Kaggle 目标不必优先。</td></tr><tr><td>余弦退火、温度缩放、阈值、融合</td><td>按训练 / 后处理归位，并区分优化、校准与决策，不再散落在模型树上。</td></tr></tbody></table></div><div class="update-block"><h3>来源与维护</h3><p>节点正文是简明教学归纳，方法适用性是条件建议。重点核查新方法及容易混淆的概念；参考链接指向官方文档或原始论文。滚动文档会变化，具体版本限制以原文为准。</p><ul class="source-links">${["selection", "rl", "peft", "dpo", "grpo", "tabpfn", "temperature", "cosine", "rag", "tuning"].map((id) => `<li><a href="${sources[id][1]}" target="_blank" rel="noopener">${esc(sources[id][0])} ↗</a></li>`).join("")}<li><a href="https://github.com/AMAI-GmbH/AI-Expert-Roadmap" target="_blank" rel="noopener">AMAI 原版路线图 · 灵感来源 ↗</a></li><li><a href="./KNOWLEDGE.md">完整文字版与参考链接 ↗</a></li></ul></div>`;
+    `<h2 class="view-title">更新知识，而不追逐名词。</h2><p class="view-lead">基于 AMAI 2022 路线图的重构思路，重新编写内容与界面。核查日期 ${reviewed}；不是“所有 2026 技术”的穷尽目录。</p><div class="update-block"><h3>2.0 · 完整相连的知识宇宙</h3><p>220 个节点、219 条层级连线、55 条带类型的跨树关系。补齐各模块的多级子树；同图提供星系和树形布局、缩放拖动、祖先高亮、关系线、折叠与完整 SVG 导出。</p><h3>知识组织原则</h3><ul><li>从职业工具清单改为 8 个知识模块，分开学习方式、模型、验证和训练技巧。</li><li>每个节点增加定义、适用条件、使用边界、例子和关联知识。</li><li>新增数据分析 / Kaggle / 生成式 AI 三条学习主线，以及条件选择器与组合方案。</li><li>经典不等于淘汰。“按需”表示对当前目标的优先级，不表示业界弃用。</li></ul></div><div class="update-block"><h3>内容取舍记录</h3><table class="updates-table"><thead><tr><th>内容</th><th>处理与原因</th></tr></thead><tbody><tr><td>LoRA / QLoRA、DPO、GRPO、TabPFN</td><td>补充到适配、后训练、表格模型的位置，写明资源、反馈与规则边界。不是所有任务的默认选择。</td></tr><tr><td>RAG、嵌入、多模态与生成评估</td><td>补充现代应用链路。“新增到本图”不代表发明于 2022 年后；RAG 原论文发表于 2020 年。</td></tr><tr><td>线性模型、树模型、TF-IDF、统计与实验</td><td>保留。仍能提供低成本基线或关键分析能力，不因年代较早而移除。</td></tr><tr><td>RNN / LSTM、SVM</td><td>保留为按需分支。说明适配场景，不放在所有任务的默认主线上。</td></tr><tr><td>大数据平台与分布式技术清单</td><td>缩到工程模块，等规模需求明确再学。对当前数据分析与 Kaggle 目标不必优先。</td></tr><tr><td>余弦退火、温度缩放、阈值、融合</td><td>按训练 / 后处理归位，并区分优化、校准与决策，不再散落在模型树上。</td></tr></tbody></table></div><div class="update-block"><h3>来源与维护</h3><p>节点正文是简明教学归纳，方法适用性是条件建议。重点核查新方法及容易混淆的概念；参考链接指向官方文档或原始论文。滚动文档会变化，具体版本限制以原文为准。</p><ul class="source-links">${["selection", "rl", "peft", "dpo", "grpo", "tabpfn", "temperature", "cosine", "rag", "tuning"].map((id) => `<li><a href="${sources[id][1]}" target="_blank" rel="noopener">${esc(sources[id][0])} ↗</a></li>`).join("")}<li><a href="https://github.com/AMAI-GmbH/AI-Expert-Roadmap" target="_blank" rel="noopener">AMAI 原版路线图 · 灵感来源 ↗</a></li><li><a href="./KNOWLEDGE.md">完整文字版与参考链接 ↗</a></li></ul></div>`;
 }
 function toast(text) {
   $("#toast").textContent = text;
   $("#toast").classList.add("show");
   setTimeout(() => $("#toast").classList.remove("show"), 2500);
 }
-function focusNode(id) {
+function focusNode(id, focus = true) {
   const n = byId.get(id);
   if (!n) return;
   $("#search").value = "";
   $("#search-results").innerHTML = "";
   go({ node: id, domain: n.domain, view: "map" });
-  if (innerWidth <= 1250) {
-    $("#detail").scrollIntoView({ behavior: "instant", block: "start" });
-  } else {
-    $("#workspace").scrollIntoView({ behavior: "instant", block: "start" });
-  }
+  if (focus) galaxy?.focus(id);
 }
 document.addEventListener("click", (e) => {
   const n = e.target.closest("[data-node]");
@@ -309,7 +325,7 @@ document.addEventListener("click", (e) => {
   }
   const d = e.target.closest("[data-domain]");
   if (d) {
-    go({ domain: d.dataset.domain || null, node: null, view: "map" });
+    focusNode(d.dataset.domain || "universe");
     $("#workspace").scrollIntoView({ behavior: "instant", block: "start" });
     return;
   }
@@ -357,7 +373,7 @@ $("#search").addEventListener("input", (e) => {
       .slice(0, 20)
       .map(
         (n) =>
-          `<button data-node="${n.id}">${esc(n.title)}<br><small>${esc(domainById.get(n.domain).title)}</small></button>`,
+          `<button data-node="${n.id}">${esc(n.title)}<br><small>${esc(domainById.get(n.domain)?.title || "知识宇宙")}</small></button>`,
       )
       .join("");
 });
@@ -379,42 +395,15 @@ window.addEventListener("hashchange", () => {
   if (location.hash !== "#detail") route();
 });
 function exportSvg() {
-  const d = domainById.get(state.domain);
-  const groups = d
-    ? sections
-        .filter((s) => s.domain === d.id)
-        .map((s) => ({
-          title: s.title,
-          color: d.color,
-          items: nodes.filter((n) => n.section === s.id).map((n) => n.title),
-        }))
-    : domains.map((d) => ({
-        title: d.title,
-        color: d.color,
-        items: sections.filter((s) => s.domain === d.id).map((s) => s.title),
-      }));
-  const width = 1200,
-    pad = 45,
-    col = 550;
-  let heights = [150, 150];
-  const boxes = groups.map((g, i) => {
-    const c = i % 2,
-      y = heights[c],
-      x = pad + c * 580,
-      h = 78 + g.items.length * 34;
-    heights[c] += h + 24;
-    return { g, x, y, h };
-  });
-  const height = Math.max(...heights) + 65;
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><rect width="100%" height="100%" fill="#f7f8f4"/><g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif"><text x="45" y="63" font-size="30" font-weight="600" fill="#234d41">知图 · ${esc(d?.title || "数据与 AI 学习地图")}</text><text x="45" y="102" font-size="15" fill="#657565">${reviewed} · 模块表示知识组织，跨模块方法可以组合 · 完整条件见交互版</text>${boxes.map(({ g, x, y, h }) => `<rect x="${x}" y="${y}" width="${col}" height="${h}" rx="10" fill="white" stroke="#dce4d7"/><rect x="${x}" y="${y + 12}" width="4" height="32" fill="${g.color}"/><text x="${x + 24}" y="${y + 37}" font-size="21" fill="${g.color}" font-weight="600">${esc(g.title)}</text><path d="M ${x + 27} ${y + 62} V ${y + h - 20}" stroke="${g.color}" opacity=".4"/>${g.items.map((t, k) => `<path d="M ${x + 27} ${y + 77 + k * 34} H ${x + 40}" stroke="${g.color}" opacity=".4"/><text x="${x + 48}" y="${y + 83 + k * 34}" font-size="15" fill="#34483c">${esc(t)}</text>`).join("")}`).join("")}<text x="45" y="${height - 24}" font-size="12" fill="#657565">AndyShan11 / ai-learning-atlas · github.com/AndyShan11/ai-learning-atlas</text></g></svg>`;
+  if (!galaxy) return;
   const url = URL.createObjectURL(
-    new Blob([svg], { type: "image/svg+xml;charset=utf-8" }),
+    new Blob([galaxy.exportSvg()], { type: "image/svg+xml;charset=utf-8" }),
   );
   const a = document.createElement("a");
   a.href = url;
-  a.download = `learning-atlas-${d?.id || "overview"}.svg`;
+  a.download = "knowledge-universe.svg";
   a.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
-  toast("已导出可缩放 SVG");
+  toast("已导出所有层级与名称");
 }
 route();
